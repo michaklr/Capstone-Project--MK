@@ -19,10 +19,11 @@ const HeadlineContainer = styled.section`
   margin: -15px 0;
   position: relative;
   pointer-events: none;
+   text-align: center;
 `
 
 const UnderlineStyled = styled(Underline)`
-  text-align: center;
+ 
   color: var(--highlight);
   width: 100%;
   z-index: 0;
