@@ -24,7 +24,6 @@ const HeadlineContainer = styled.section`
 
 const UnderlineStyled = styled(Underline)`
  
-  color: var(--highlight);
   width: 100%;
   z-index: 0;
   position: relative;
