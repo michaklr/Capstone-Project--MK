@@ -77,9 +77,9 @@ export default function HomePage() {
             </FinePrint>
 
             <ButtonFixedWrapper>
-                <FloatingActionButtons to={"/manual"}>
-                    <button><Link to={'/manual'}>Umfrage starten</Link></button>
-                </FloatingActionButtons>
+
+                   <StyledLink to={'/manual'}><FloatingActionButtons/></StyledLink>
+
             </ButtonFixedWrapper>
 
 
@@ -136,5 +136,10 @@ const ButtonFixedWrapper = styled.section`
   right: 0;
   -webkit-box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.2); 
  box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.2);
-  
+ 
 `
+
+const StyledLink = styled(Link)`
+text-decoration:none;
+`
+

@@ -12,8 +12,8 @@ function App() {
           </Route>
             <Route path={'/manual'}exact>
                 <ManualPage />
-                <ErgebnisPage />
             </Route>
+            <ErgebnisPage />
         </Switch>
       </Router>
   );

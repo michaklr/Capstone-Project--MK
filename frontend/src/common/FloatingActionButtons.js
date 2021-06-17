@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import styled from "styled-components/macro";
-import {ReactComponent as RandomLogo} from "../img/Mental.svg";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,13 +19,16 @@ export default function FloatingActionButtons() {
     const classes = useStyles();
 
     return (
+
         <div className={classes.root}>
-
-
-            <Fab variant="extended">
+            <Fab
+                color="secondary"
+                size="large"
+                variant="extended">
                 Test starten
             </Fab>
-
         </div>
+
     );
 }
+
