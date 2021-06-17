@@ -8,6 +8,7 @@ import Collapse from "../common/collapse";
 import {Link} from "react-router-dom";
 import HomepageCard from "../common/HomepageCard";
 import BulletList from "../common/BulletList";
+import FinePrint from "../common/FinePrint";
 
 
 
@@ -69,6 +70,11 @@ export default function HomePage() {
                 </li>
             </HomepageCard>
 </CardContainer>
+            <FinePrint>
+                Hinweis: Unser Angebot ersetzt keine psychologische Beratung. Wenn Sie
+                unter psychischen Problemen leiden, suchen Sie sich bitte professionelle
+                Hilfe.
+            </FinePrint>
 
 <button><Link to={'/manual'}>Start Test</Link></button>
         </Page>
@@ -112,5 +118,4 @@ const CardContainer = styled.section`
         top: 2px;
     }
   }
-  
 `
