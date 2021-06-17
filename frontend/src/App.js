@@ -9,7 +9,7 @@ function App() {
           <Route path={'/'}exact>
             <HomePage />
           </Route>
-            <Route path={'/Instructions'}exact>
+            <Route path={'/manual'}exact>
                 <ManualPage />
             </Route>
         </Switch>
