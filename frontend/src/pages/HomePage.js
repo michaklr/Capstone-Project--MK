@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 import HomepageCard from "../common/HomepageCard";
 import BulletList from "../common/BulletList";
 import FinePrint from "../common/FinePrint";
-
+import FloatingActionButtons from "../common/FloatingActionButtons";
 
 
 export default function HomePage() {
@@ -76,7 +76,13 @@ export default function HomePage() {
                 Hilfe.
             </FinePrint>
 
-<button><Link to={'/manual'}>Start Test</Link></button>
+            <ButtonFixedWrapper>
+                <FloatingActionButtons to={"/manual"}>
+                    <button><Link to={'/manual'}>Umfrage starten</Link></button>
+                </FloatingActionButtons>
+            </ButtonFixedWrapper>
+
+
         </Page>
     )
 }
@@ -118,4 +124,17 @@ const CardContainer = styled.section`
         top: 2px;
     }
   }
+`
+
+const ButtonFixedWrapper = styled.section`
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.2); 
+ box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.2);
+  
 `

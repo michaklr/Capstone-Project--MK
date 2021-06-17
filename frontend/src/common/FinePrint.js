@@ -13,6 +13,5 @@ export default function FinePrint({ children }) {
 const SmallStyled = styled.small`
   display: block;
   margin-top: 20px;
-  padding: 25px 15px;
-  text-align: center;
+  padding: 1
 `
