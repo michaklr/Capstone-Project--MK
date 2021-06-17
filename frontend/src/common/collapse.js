@@ -31,10 +31,11 @@ export default function Collapse({ headline, headlineOpen, children }) {
 }
 
 const CollapseWrapper = styled.section`
-  margin: 30px 0;
+  margin: 20px 0;
 `
 
 const CollapseHeader = styled.div`
+  text-align: center;
   position: relative;
   border-radius: 6px;
   font-family: 'Ubuntu', sans-serif;

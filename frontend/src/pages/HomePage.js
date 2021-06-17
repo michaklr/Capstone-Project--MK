@@ -3,11 +3,11 @@ import Header from '../components/Header'
 import React from 'react'
 import styled from 'styled-components/macro'
 import HeadlineUnderline from '../common/HeadlineUnderline'
-
 import { ReactComponent as RandomLogo } from '../img/Mental.svg'
 import Collapse from "../common/collapse";
-
 import {Link} from "react-router-dom";
+
+
 
 export default function HomePage() {
 
@@ -22,12 +22,13 @@ export default function HomePage() {
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
-            <Collapse headline="Worum geht es bei Helping Hands?">
+            <Collapse headline="About Helping Hands">
                 <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
             </Collapse>
-<button><Link to={'/Instructions'}>Start Test</Link></button>
+
+<button><Link to={'/manual'}>Start Test</Link></button>
         </Page>
     )
 }
