@@ -3,13 +3,12 @@ import HomePage from "./pages/HomePage";
 import ManualPage from "./pages/ManualPage";
 import ErgebnisPage from "./pages/ErgebnisPage";
 import SurveyPage from "./pages/SurveyPage";
-
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#FF0000",
+      main: "#6B9080",
     },
   },
 });

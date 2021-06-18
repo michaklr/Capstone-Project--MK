@@ -20,7 +20,7 @@ export default function ErgebnisPage() {
         </CardContainer>
       </Wrapper>
       <button>
-        <Link to={"/manual"}>Start Test</Link>
+        <Link to={"/manual"}>Psychologen in deiner Nähe</Link>
       </button>
     </Page>
   );

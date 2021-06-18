@@ -39,7 +39,7 @@ export default function SurveyPage() {
     setSurveys(SURVEYS);
 
     // 3. Standardmäßig erste Frage anzeigen
-    setActiveSurvey(SURVEYS[0]);
+    setActiveSurvey(SURVEYS[2]);
   });
 
   const renderOptions = () => {
@@ -47,51 +47,31 @@ export default function SurveyPage() {
       <div className="options">
         <FormControlLabel
           control={
-            <Checkbox
-              checked={true}
-              onChange={console.log("changed")}
-              name="checkedA"
-            />
+            <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
           label="Secondary"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              checked={true}
-              onChange={() => console.log("changed")}
-              name="checkedA"
-            />
+            <Checkbox onClick={() => console.log("changed")} name="checkedA" />
+          }
+          label="Trifft nicht zu"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
           label="Secondary"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              checked={true}
-              onChange={console.log("changed")}
-              name="checkedA"
-            />
+            <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
           label="Secondary"
         />
         <FormControlLabel
           control={
-            <Checkbox
-              checked={true}
-              onChange={console.log("changed")}
-              name="checkedA"
-            />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={true}
-              onChange={console.log("changed")}
-              name="checkedA"
-            />
+            <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
           label="Secondary"
         />
@@ -129,7 +109,7 @@ export default function SurveyPage() {
         </CardContainer>
       </Wrapper>
       <button>
-        <Link to={"/manual"}>Start Test</Link>
+        <Link to={"/manual/survey/result"}>Start Test</Link>
       </button>
     </Page>
   );
