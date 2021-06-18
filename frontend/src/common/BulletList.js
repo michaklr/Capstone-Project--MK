@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
+import React from "react";
+import styled from "styled-components/macro";
+import PropTypes from "prop-types";
 
 BulletList.propTypes = {
-    children: PropTypes.any.isRequired,
-    listType: PropTypes.resetWarningCache,
-}
+  children: PropTypes.any.isRequired,
+  listType: PropTypes.resetWarningCache,
+};
 
-export default function BulletList({ children, listType = 'bullet_circle' }) {
-    return <ListContainer listType={listType}>{children}</ListContainer>
+export default function BulletList({ children, listType = "bullet_circle" }) {
+  return <ListContainer listType={listType}>{children}</ListContainer>;
 }
 
 const ListContainer = styled.ul`
@@ -18,7 +18,7 @@ const ListContainer = styled.ul`
   li {
     list-style: none;
     background: ${(props) =>
-    'url(/img/' + props.listType + '.svg) no-repeat left top;'};
+      "url(/img/" + props.listType + ".svg) no-repeat left top;"};
     padding: 0px 0px 3px 27px;
     margin-bottom: 18px;
   }
@@ -31,4 +31,4 @@ const ListContainer = styled.ul`
   p {
     margin: 12px 0 0 0;
   }
-`
+`;
