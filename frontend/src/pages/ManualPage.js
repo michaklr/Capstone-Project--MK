@@ -11,12 +11,42 @@ export default function ManualPage() {
       <HeaderManual />
       <Wrapper>
         <CardContainer>
+          <div>
+            Hier ist eine Liste von Beschwerden, an denen Menschen leiden
+            können. Einige der genannten Beschwerden könnten aktuell auf Sie
+            selbst zutreffen. Damit bei Ihnen kein Leiden übersehen wird, bitten
+            wir Sie eine Vielzahl möglicher Beschwerden zu beurteilen. Bitte
+            geben Sie jetzt an, ob eine der nachfolgenden Beschwerden in den
+            <b>
+              <u> letzten zwei Wochen </u>
+            </b>
+            auf Sie selbst zutrifft. Falls eine davon zutrifft, möchten wir auch
+            wissen, wie stark Sie daran leiden.
+          </div>
           <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet.
+            Bitte beantworten Sie jetzt spontan und <u>zügig</u> jede der
+            folgenden Aussagen!
+          </p>{" "}
+          <p>
+            Kreuzen Sie <b>„0 = trifft nicht zu“</b>
+            an, wenn Sie überhaupt nicht an der jeweiligen Beschwerde leiden,
+          </p>
+          <p>
+            kreuzen Sie<b> „1 = trifft kaum zu“</b> an, wenn Sie kaum daran
+            leiden,
+          </p>
+          <p>
+            kreuzen Sie<b> „2 = trifft ziemlich zu“</b> an, wenn Sie ziemlich
+            daran leiden,
+          </p>{" "}
+          <p>
+            kreuzen Sie <b> „3 = trifft deutlich zu“</b> an, wenn Sie deutlich
+            daran leiden und
+          </p>
+          <p>
+            {" "}
+            kreuzen Sie <b>„4 = trifft extrem zu“</b> an, wenn Sie extrem daran
+            leiden.
           </p>
         </CardContainer>
       </Wrapper>
