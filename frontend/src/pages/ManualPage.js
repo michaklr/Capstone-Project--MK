@@ -14,11 +14,12 @@ export default function ManualPage() {
         <HeaderManual />
         <CardContainer>
           <div>
-            Es folgt ein kurzer Test mit Beschwerden, an denen Menschen leiden
-            können. Einige der genannten Beschwerden könnten aktuell auf Sie
-            selbst zutreffen. Damit bei Ihnen kein Leiden übersehen wird, bitten
-            wir Sie eine Vielzahl möglicher Beschwerden zu beurteilen. Bitte
-            geben Sie jetzt an, ob eine der nachfolgenden Beschwerden in den
+            Im folgenden präsentieren wir Ihnen eine Liste mit Beschwerden, an
+            denen Menschen leiden können. Einige der genannten Beschwerden
+            könnten aktuell auf Sie selbst zutreffen. Damit bei Ihnen kein
+            Leiden übersehen wird, bitten wir Sie eine Vielzahl möglicher
+            Beschwerden zu beurteilen. Bitte geben Sie jetzt an, ob eine der
+            nachfolgenden Beschwerden in den
             <b>
               <u> letzten zwei Wochen </u>
             </b>

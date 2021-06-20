@@ -10,5 +10,4 @@ export default function HeaderManual() {
 
 const Wrapper = styled.header`
   text-align: center;
-  color: #a4c3b2;
 `;
