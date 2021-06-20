@@ -4,15 +4,17 @@ import HeaderManual from "../components/HeaderManual";
 import React from "react";
 import styled from "styled-components/macro";
 import FloatingActionButtons from "../common/FloatingActionButtons";
+import NavBar from "../components/NavBar";
 
 export default function ManualPage() {
   return (
     <Page>
-      <HeaderManual />
+      <NavBar />
       <Wrapper>
+        <HeaderManual />
         <CardContainer>
           <div>
-            Hier ist eine Liste von Beschwerden, an denen Menschen leiden
+            Es folgt ein kurzer Test mit Beschwerden, an denen Menschen leiden
             können. Einige der genannten Beschwerden könnten aktuell auf Sie
             selbst zutreffen. Damit bei Ihnen kein Leiden übersehen wird, bitten
             wir Sie eine Vielzahl möglicher Beschwerden zu beurteilen. Bitte

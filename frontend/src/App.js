@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ManualPage from "./pages/ManualPage";
-import ErgebnisPage from "./pages/ErgebnisPage";
+import ResultPage from "./pages/ResultPage";
 import SurveyPage from "./pages/SurveyPage";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import NavBar from "./components/NavBar";
 
 const theme = createMuiTheme({
   palette: {
@@ -28,7 +29,7 @@ function App() {
             <SurveyPage />
           </Route>
           <Route path={"/manual/survey/result"} exact>
-            <ErgebnisPage />
+            <ResultPage />
           </Route>
         </Switch>
       </Router>

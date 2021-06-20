@@ -10,6 +10,7 @@ export default createGlobalStyle`
     padding-bottom: 60px;
     font-size: 110%;
     font-family: sans-serif;
+
   }
   
   button, input, select, textarea {

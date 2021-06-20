@@ -1,5 +1,5 @@
 import Page from "../components/Page";
-import Header from "../components/Header";
+import HeaderHomepage from "../components/HeaderHomepage";
 import React from "react";
 import styled from "styled-components/macro";
 import HeadlineUnderline from "../common/HeadlineUnderline";
@@ -14,7 +14,7 @@ import FloatingActionButtons from "../common/FloatingActionButtons";
 export default function HomePage() {
   return (
     <Page>
-      <Header />
+      <HeaderHomepage />
       <LogoStyled />
       <HeadlineUnderline>
         <h1>For a healthy mind!</h1>

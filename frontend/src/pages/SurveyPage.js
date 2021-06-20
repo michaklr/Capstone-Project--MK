@@ -6,6 +6,8 @@ import HeaderSurvey from "../components/HeaderSurvey";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
+import NavBar from "../components/NavBar";
+
 const OPTIONS = [0, 1, 2, 3, 4];
 
 const SURVEYS = [
@@ -49,31 +51,31 @@ export default function SurveyPage() {
           control={
             <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
-          label="Secondary"
+          label="Trifft nicht zu"
         />
         <FormControlLabel
           control={
             <Checkbox onClick={() => console.log("changed")} name="checkedA" />
           }
-          label="Trifft nicht zu"
+          label="Trifft kaum zu"
         />
         <FormControlLabel
           control={
             <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
-          label="Secondary"
+          label="Trifft ziemlich zu"
         />
         <FormControlLabel
           control={
             <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
-          label="Secondary"
+          label="Trifft deutlich zu"
         />
         <FormControlLabel
           control={
             <Checkbox onChange={console.log("changed")} name="checkedA" />
           }
-          label="Secondary"
+          label="Trifft extrem zu"
         />
       </div>
     );
@@ -102,6 +104,7 @@ export default function SurveyPage() {
 
   return (
     <Page>
+      <NavBar />
       <HeaderSurvey />
       <Wrapper>
         <CardContainer>

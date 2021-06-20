@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import React from "react";
 import styled from "styled-components/macro";
 import HeaderErgebnis from "../components/HeaderErgebnis";
+import NavBar from "../components/NavBar";
 
-export default function ErgebnisPage() {
+export default function ResultPage() {
   return (
     <Page>
+      <NavBar />
       <HeaderErgebnis />
       <Wrapper>
         <CardContainer>
