@@ -1,23 +1,17 @@
 package de.michaklr.backend.repository;
 
 import de.michaklr.backend.model.SurveyItem;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class SurveyItemRepository {
+public interface SurveyItemRepository extends PagingAndSortingRepository<SurveyItem,String> {
 
-    private final List<SurveyItem> surveyItems = new ArrayList<>();
+    List<SurveyItem> findAll();
 
-    public SurveyItem add(SurveyItem item){
-        return null;
-    }
-
-public List<SurveyItem> listItems(){
-    return List.of();
-
-}
+    SurveyItem findByQuestionNumber(String questionNumber);
 
 }

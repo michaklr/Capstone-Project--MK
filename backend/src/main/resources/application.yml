@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      database: Capstone-Project-MK
+      database: survey
 server:
   error:
     include-message: always

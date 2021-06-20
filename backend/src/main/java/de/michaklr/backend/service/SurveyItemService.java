@@ -18,7 +18,7 @@ public class SurveyItemService {
     }
 
     public List<SurveyItem> listItems(){
-        return surveyItemRepository.listItems();
+        return surveyItemRepository.findAll();
     }
 
 

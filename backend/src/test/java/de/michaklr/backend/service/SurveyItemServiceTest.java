@@ -20,7 +20,7 @@ class SurveyItemServiceTest {
     @Test
     public void listSurveyItemsShouldReturnItemsFromRepository(){
     // GIVEN
-    when(repository.listItems()).thenReturn(List.of(
+    when(repository.findAll()).thenReturn(List.of(
             new SurveyItem("Funktioniert das?","3"),
             new SurveyItem("Order funktioniert das nicht?","4")
             ));

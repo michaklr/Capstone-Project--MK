@@ -30,8 +30,8 @@ class SurveyItemControllerTest {
     @Test
     public void getSurveyItemsShouldReturnItemsFromDb(){
         // GIVEN
-        repository.add(new SurveyItem("Hallo?","1"));
-        repository.add(new SurveyItem("Wie gehts?","2"));
+        repository.save(new SurveyItem("Hallo?","1"));
+        repository.save(new SurveyItem("Wie gehts?","2"));
 
         // WHEN
         ResponseEntity<SurveyItem[]> response = restTemplate.getForEntity("http://localhost:"+port+"/api/survey", SurveyItem[].class);
