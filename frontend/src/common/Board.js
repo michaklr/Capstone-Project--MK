@@ -1,16 +1,14 @@
 import styled from "styled-components/macro";
 import SurveyItem from "../components/SurveyItem";
 
-export default function Board({ surveyQuestions }) {
+export default function Board({ questionSurvey }) {
   return (
     <Wrapper>
       <CardContainer>
         <ul>
-          {surveyQuestions.map((questionSurvey) => (
-            <li key={questionSurvey.questionNumber}>
-              <SurveyItem questionSurvey={questionSurvey} />
-            </li>
-          ))}
+          <li>
+            <SurveyItem questionSurvey={questionSurvey} />
+          </li>
         </ul>
       </CardContainer>
     </Wrapper>
