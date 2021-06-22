@@ -14,4 +14,5 @@ const SmallStyled = styled.small`
   display: block;
   margin-top: 20px;
   padding: 1;
+  text-align: center;
 `;
