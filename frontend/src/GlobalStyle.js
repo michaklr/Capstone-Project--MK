@@ -6,7 +6,8 @@ export default createGlobalStyle`
   }
   
   html, body {
-    padding: 0.5px;
+    padding: 0.0px;
+    margin: 0;
     padding-bottom: 60px;
     font-size: 110%;
     font-family: sans-serif;
