@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import HeaderSurvey from "../components/HeaderSurvey";
 import Board from "../common/Board";
 import React, { useState } from "react";
+import UmfrageleisteText from "../common/UmfrageleisteText";
 
 export default function SurveyPage({ surveyQuestions }) {
   const [activeSurveyQuestion, setActiveSurveyQuestion] = useState(0);
@@ -17,8 +18,14 @@ export default function SurveyPage({ surveyQuestions }) {
       {questionSurvey && (
         <Board title="Survey" questionSurvey={questionSurvey} />
       )}
+      <div>
+        <UmfrageleisteText />
+      </div>
       <button onClick={() => setActiveSurveyQuestion(activeSurveyQuestion + 1)}>
         Weiter
+      </button>
+      <button onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}>
+        Back
       </button>
     </Page>
   );
