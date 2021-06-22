@@ -4,6 +4,7 @@ import HeaderSurvey from "../components/HeaderSurvey";
 import Board from "../common/Board";
 import React, { useState } from "react";
 import UmfrageleisteText from "../common/UmfrageleisteText";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 export default function SurveyPage({ surveyQuestions }) {
   const [activeSurveyQuestion, setActiveSurveyQuestion] = useState(0);
@@ -14,7 +15,8 @@ export default function SurveyPage({ surveyQuestions }) {
   return (
     <Page>
       <NavBar />
-      <HeaderSurvey />
+      <HeaderSurvey activeSurveyQuestion={activeSurveyQuestion} />
+
       {questionSurvey && (
         <Board title="Survey" questionSurvey={questionSurvey} />
       )}
