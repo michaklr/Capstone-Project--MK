@@ -2,7 +2,7 @@ import Page from "../components/Page";
 import NavBar from "../components/NavBar";
 import HeaderSurvey from "../components/HeaderSurvey";
 import Board from "../common/Board";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UmfrageleisteText from "../common/UmfrageleisteText";
 import { useHistory } from "react-router-dom";
 
@@ -16,9 +16,11 @@ export default function SurveyPage({
     surveyQuestions.length > activeSurveyQuestion &&
     surveyQuestions[activeSurveyQuestion];
 
-  const [checkedAnswer, setCheckedAnswer] = useState();
+  useEffect(() => {}, [addAnswer]);
 
   const history = useHistory();
+
+  const [enableWeiterbutton, setEnableWeiterButton] = useState();
 
   const handleAddAnswer = (answer) => {
     addAnswer(answer, activeSurveyQuestion);
@@ -31,6 +33,7 @@ export default function SurveyPage({
       submitAnswers();
       history.push("/manual/survey/result");
     }
+    setEnableWeiterButton(false)
   };
 
   return (
@@ -42,9 +45,14 @@ export default function SurveyPage({
         <Board title="Survey" questionSurvey={questionSurvey} />
       )}
       <div>
-        <UmfrageleisteText addAnswer={handleAddAnswer} />
+        <UmfrageleisteText
+          setEnableWeiterButton={setEnableWeiterButton}
+          addAnswer={handleAddAnswer}
+        />
       </div>
-      <button onClick={handleWeiterClick}>Weiter</button>
+      <button disabled={!enableWeiterbutton} onClick={handleWeiterClick}>
+        Weiter
+      </button>
       <button onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}>
         Back
       </button>

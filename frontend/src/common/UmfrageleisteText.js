@@ -1,8 +1,12 @@
 import "./Umfrageleiste.css";
 
-export default function UmfrageleisteText({ addAnswer }) {
+export default function UmfrageleisteText({
+  addAnswer,
+  setEnableWeiterButton,
+}) {
   const handleOnChange = (event) => {
     addAnswer(event.target.value);
+    setEnableWeiterButton(true);
   };
 
   return (
