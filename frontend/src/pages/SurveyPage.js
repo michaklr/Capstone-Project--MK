@@ -16,24 +16,21 @@ export default function SurveyPage({
     surveyQuestions.length > activeSurveyQuestion &&
     surveyQuestions[activeSurveyQuestion];
 
+  const [checkedAnswer, setCheckedAnswer] = useState();
+
   useEffect(() => {}, [addAnswer]);
 
   const history = useHistory();
 
-  const [enableWeiterbutton, setEnableWeiterButton] = useState();
-
-  const handleAddAnswer = (answer) => {
-    addAnswer(answer, activeSurveyQuestion);
-  };
-
-  const handleWeiterClick = (event) => {
-    if (activeSurveyQuestion < 28) {
+  const handleWeiterClick = () => {
+    addAnswer(checkedAnswer, activeSurveyQuestion);
+    if (activeSurveyQuestion < 29) {
       setActiveSurveyQuestion(activeSurveyQuestion + 1);
     } else {
       submitAnswers();
       history.push("/manual/survey/result");
     }
-    setEnableWeiterButton(false)
+    setCheckedAnswer("");
   };
 
   return (
@@ -46,11 +43,11 @@ export default function SurveyPage({
       )}
       <div>
         <UmfrageleisteText
-          setEnableWeiterButton={setEnableWeiterButton}
-          addAnswer={handleAddAnswer}
+          checkedAnswer={checkedAnswer}
+          setCheckedAnswer={setCheckedAnswer}
         />
       </div>
-      <button disabled={!enableWeiterbutton} onClick={handleWeiterClick}>
+      <button disabled={!checkedAnswer} onClick={handleWeiterClick}>
         Weiter
       </button>
       <button onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}>

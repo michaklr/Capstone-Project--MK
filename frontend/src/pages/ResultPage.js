@@ -6,14 +6,13 @@ import HeaderErgebnis from "../components/HeaderErgebnis";
 import NavBar from "../components/NavBar";
 
 export default function ResultPage({ surveyAnswers }) {
+  console.log(surveyAnswers);
   return (
     <Page>
       <NavBar />
       <HeaderErgebnis />
       <Wrapper>
-        <CardContainer>
-          <p>surveyAnswers={surveyAnswers}</p>
-        </CardContainer>
+        <CardContainer>{surveyAnswers.depressionResult}</CardContainer>
       </Wrapper>
       <button>
         <Link to={"/manual"}>Psychologen in deiner Nähe</Link>

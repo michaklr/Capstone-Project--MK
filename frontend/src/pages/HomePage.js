@@ -138,7 +138,7 @@ const CardContainer = styled.section`
 
 const ButtonFixedWrapper = styled.section`
   background-color: white;
-  padding: 15px;
+  padding: 12px;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -146,6 +146,12 @@ const ButtonFixedWrapper = styled.section`
   right: 0;
   -webkit-box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.2);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 24%,
+    rgba(246, 255, 248, 1) 86%
+  );
 `;
 
 const StyledLink = styled(Link)`
