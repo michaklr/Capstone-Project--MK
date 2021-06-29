@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 import { ReactComponent as BackIcon } from "../img/back.svg";
 import { ReactComponent as HomeIcon } from "../img/home.svg";
-import { ReactComponent as Logo } from "../img/logo.svg";
+import { ReactComponent as Icon } from "../img/NewIcon.svg";
 import IconButton from "../common/IconButton";
 
 export default function NavBar() {
@@ -15,7 +15,7 @@ export default function NavBar() {
         <BackIcon title="zurück" />
       </IconButton>
       <Link to="/">
-        <LogoStyled title="Bla bla" />
+        <LogoStyled />
       </Link>
       <IconButton onClick={() => history.push("/")}>
         <HomeIcon title="zur Homepage" />
@@ -24,8 +24,10 @@ export default function NavBar() {
   );
 }
 
-const LogoStyled = styled(Logo)`
+const LogoStyled = styled(Icon)`
   overflow: visiblegit pull;
+  width: 100%;
+  height: 100px;
 `;
 
 const HeaderContainer = styled.header`

@@ -3,7 +3,7 @@ import HeaderHomepage from "../components/HeaderHomepage";
 import React from "react";
 import styled from "styled-components/macro";
 import HeadlineUnderline from "../common/HeadlineUnderline";
-import { ReactComponent as RandomLogo } from "../img/Mental.svg";
+import { ReactComponent as Logo } from "../img/logo1.svg";
 import Collapse from "../common/collapse";
 import { Link } from "react-router-dom";
 import HomepageCard from "../common/HomepageCard";
@@ -96,12 +96,11 @@ export default function HomePage() {
     </Page>
   );
 }
-const LogoStyled = styled(RandomLogo)`
-  display: block;
-  margin: 15px auto 0 auto;
-  width: 50%;
-  max-width: 300px;
-  margin-bottom: 40px;
+const LogoStyled = styled(Logo)`
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
 `;
 const CardContainer = styled.section`
   background-color: #CCE3DE

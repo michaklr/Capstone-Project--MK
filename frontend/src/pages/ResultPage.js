@@ -12,10 +12,18 @@ export default function ResultPage({ surveyAnswers }) {
       <NavBar />
       <HeaderErgebnis />
       <Wrapper>
-        <CardContainer>{surveyAnswers.depressionResult}</CardContainer>
+        <CardContainer>
+          {surveyAnswers?.depressionResult}
+          {surveyAnswers?.angstResult}
+          {surveyAnswers?.zwangResult}
+          {surveyAnswers?.somaResult}
+          {surveyAnswers?.essVerhaltenResult}
+          {surveyAnswers?.zusatzResult}
+          {surveyAnswers?.gesamtResult}
+        </CardContainer>
       </Wrapper>
       <button>
-        <Link to={"/manual"}>Psychologen in deiner Nähe</Link>
+        <Link to={"/manual/survey/result/help"}>Find Help</Link>
       </button>
     </Page>
   );

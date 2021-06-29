@@ -47,9 +47,11 @@ export default function SurveyPage({
           setCheckedAnswer={setCheckedAnswer}
         />
       </div>
+
       <button disabled={!checkedAnswer} onClick={handleWeiterClick}>
         Weiter
       </button>
+
       <button onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}>
         Back
       </button>
