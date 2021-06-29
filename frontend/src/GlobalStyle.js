@@ -9,7 +9,8 @@ export default createGlobalStyle`
     padding: 0.5px;
     padding-bottom: 60px;
     font-size: 100%;
-    font-family: sans-serif;
+   
+    
    
   }
   

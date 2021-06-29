@@ -3,46 +3,54 @@ import HeaderHomepage from "../components/HeaderHomepage";
 import React from "react";
 import styled from "styled-components/macro";
 import HeadlineUnderline from "../common/HeadlineUnderline";
-import { ReactComponent as Logo } from "../img/logo1.svg";
+import therapy from "../img/therapy.jpg";
 import Collapse from "../common/collapse";
 import { Link } from "react-router-dom";
 import HomepageCard from "../common/HomepageCard";
 import BulletList from "../common/BulletList";
 import FinePrint from "../common/FinePrint";
 import FloatingActionButtons from "../common/FloatingActionButtons";
+import { ReactComponent as hand } from "../img/hand.svg";
 
 export default function HomePage() {
   return (
     <Page>
       <HeaderHomepage />
-      <LogoStyled />
+      <HeaderImage>
+        <img src={therapy} width="600" />
+      </HeaderImage>
       <HeadlineUnderline>
         <h1>For a healthy mind!</h1>
       </HeadlineUnderline>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet.
-      </p>
-      <Collapse headline="About Helping Hands">
+      <FronttextWrapper>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet.
+          ipsum dolor sit amet.
         </p>
+      </FronttextWrapper>
+      <Collapse headline="About Helping Hands">
+        <IconStyled />
+        <CollapseTextWrapper>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.
+          </p>
+        </CollapseTextWrapper>
       </Collapse>
 
       <CardContainer>
@@ -96,12 +104,7 @@ export default function HomePage() {
     </Page>
   );
 }
-const LogoStyled = styled(Logo)`
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: bottom;
-`;
+
 const CardContainer = styled.section`
   background-color: #CCE3DE
   border-radius: 0;
@@ -153,6 +156,35 @@ const ButtonFixedWrapper = styled.section`
   );
 `;
 
+const FronttextWrapper = styled.section`
+  padding: 20px;
+  margin-left: 10px;
+`;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+const IconStyled = styled(hand)`
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-bottom: 15px;
+`;
+
+const HeaderImage = styled.section`
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+`;
+
+const CollapseTextWrapper = styled.section`
+  margin-left: 15px;
+  margin-top: 5px;
 `;
