@@ -2,15 +2,12 @@ import React from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 import mapStyles from "../common/mapStyles";
+import { geolocated } from "react-geolocated";
 
 const libraries = ["places"];
 const mapContainerStyle = {
   width: "100vw",
   height: "50vh",
-};
-const center = {
-  lat: 50.935173,
-  lng: 6.953101,
 };
 
 const options = {
@@ -19,11 +16,16 @@ const options = {
   zoomControl: true,
 };
 
-export default function FindHelpPage() {
+function FindHelpPage(props) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
+
+  const center = {
+    lat: props.coords ? props.coords.latitude : 50.935173,
+    lng: props.coords ? props.coords.longitude : 6.953101,
+  };
 
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
@@ -39,3 +41,11 @@ export default function FindHelpPage() {
     </div>
   );
 }
+
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+    watchPosition: true,
+  },
+  userDecisionTimeout: 5000,
+})(FindHelpPage);
