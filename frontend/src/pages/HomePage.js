@@ -181,6 +181,7 @@ const HeaderImage = styled.section`
     width: 100%;
     max-width: 100%;
     height: auto;
+    border-radius: 100px 20px 100px 20px;
   }
 `;
 

@@ -33,11 +33,12 @@ const LogoStyled = styled(Icon)`
 
 const HeaderContainer = styled.header`
   display: flex;
-  height: 60px;
+  height: 65px;
   width: 100%;
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-between;
   padding: 10px 15px;
+  align-items: center;
   -webkit-box-shadow: 2px 7px 21px 0px rgba(196, 196, 196, 0.57);
   box-shadow: 2px 7px 21px 0px rgba(196, 196, 196, 0.57);
 `;

@@ -1,7 +1,6 @@
 import styled from "styled-components/macro";
 import React from "react";
 import { ReactComponent as Writing } from "../img/schriftzug.svg";
-import { ReactComponent as menu } from "../img/menu.svg";
 
 export default function HeaderHomepage() {
   return (
@@ -17,10 +16,10 @@ export default function HeaderHomepage() {
 }
 
 const LogoStyled = styled(Writing)`
-  width: 60%;
+  width: 55%;
   height: auto;
   float: right;
-  margin-right: 15px;
+  margin-right: 30px;
 `;
 
 const HeaderContainer = styled.header`
@@ -36,7 +35,7 @@ const HeaderContainer = styled.header`
 `;
 
 const MenuStyled = styled.section`
-  width: 40px;
+  width: 35px;
   height: 35px;
   display: flex;
   flex-direction: column;

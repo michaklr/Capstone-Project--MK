@@ -3,6 +3,8 @@ import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 import mapStyles from "../common/mapStyles";
 import { geolocated } from "react-geolocated";
+import NavBar from "../components/NavBar";
+import styled from "styled-components/macro";
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -32,12 +34,19 @@ function FindHelpPage(props) {
 
   return (
     <div>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        zoom={8}
-        center={center}
-        options={options}
-      ></GoogleMap>
+      <NavBar />
+      <HeaderWrapper>
+        <h3>Helping Hands near you</h3>
+      </HeaderWrapper>
+
+      <CardWrapper>
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          zoom={8}
+          center={center}
+          options={options}
+        ></GoogleMap>
+      </CardWrapper>
     </div>
   );
 }
@@ -49,3 +58,12 @@ export default geolocated({
   },
   userDecisionTimeout: 5000,
 })(FindHelpPage);
+
+const CardWrapper = styled.section`
+  margin-top: 50px;
+`;
+
+const HeaderWrapper = styled.h3`
+  margin-top: 10px;
+  text-align: center;
+`;
