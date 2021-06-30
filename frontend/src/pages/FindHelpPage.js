@@ -5,6 +5,17 @@ import mapStyles from "../common/mapStyles";
 import { geolocated } from "react-geolocated";
 import NavBar from "../components/NavBar";
 import styled from "styled-components/macro";
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from "@reach/combobox";
 
 const libraries = ["places"];
 const mapContainerStyle = {

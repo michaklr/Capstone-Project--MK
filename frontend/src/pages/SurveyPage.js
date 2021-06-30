@@ -61,16 +61,22 @@ export default function SurveyPage({
             />
           </div>
         </UmfrageWrapper>
+        <ButtonWrapper>
+          <button
+            disabled={!checkedAnswer}
+            class="forward"
+            onClick={handleWeiterClick}
+          >
+            Next
+          </button>
 
-        <button disabled={!checkedAnswer} onClick={handleWeiterClick}>
-          Next
-        </button>
-
-        <button
-          onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}
-        >
-          Back
-        </button>
+          <button
+            class="back"
+            onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}
+          >
+            Back
+          </button>
+        </ButtonWrapper>
       </SurveyWrapper>
     </Page>
   );
@@ -88,6 +94,34 @@ const UmfrageWrapper = styled.section`
   margin-top: 10px;
 `;
 
-const QuestionWrapper = styled.h4`
-  margin: 20px;
+const ButtonWrapper = styled.section`
+  padding-left: 25px;
+  padding-right: 25px;
+
+  button {
+    background-color: #55aa8e;
+    border-radius: 30px;
+    border: none;
+    box-shadow: none;
+    padding: 15px 45px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 3px 15px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 15px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    &[disabled] {
+      background-color: #a4c3b2;
+      color: #496f5a;
+    }
+
+    &.back {
+      float: left;
+    }
+
+    &.forward {
+      float: right;
+    }
+  }
 `;
