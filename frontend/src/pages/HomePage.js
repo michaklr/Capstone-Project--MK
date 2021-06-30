@@ -10,12 +10,13 @@ import HomepageCard from "../common/HomepageCard";
 import BulletList from "../common/BulletList";
 import FinePrint from "../common/FinePrint";
 import FloatingActionButtons from "../common/FloatingActionButtons";
+import MainNav from "../components/MainNav";
 import { ReactComponent as hand } from "../img/hand.svg";
 
 export default function HomePage() {
   return (
     <Page>
-      <HeaderHomepage />
+      <MainNav />
       <HeaderImage>
         <img src={therapy} width="600" />
       </HeaderImage>

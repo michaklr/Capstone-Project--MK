@@ -1,8 +1,11 @@
 import styled from "styled-components/macro";
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Writing } from "../img/schriftzug.svg";
+import { useHistory } from "react-router-dom";
 
 export default function HeaderHomepage() {
+  const history = useHistory();
+
   return (
     <HeaderContainer>
       <MenuStyled>
@@ -14,6 +17,14 @@ export default function HeaderHomepage() {
     </HeaderContainer>
   );
 }
+
+const NavContainer = styled.section`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
 
 const LogoStyled = styled(Writing)`
   width: 55%;
@@ -34,7 +45,7 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const MenuStyled = styled.section`
+const MenuStyled = styled.div`
   width: 35px;
   height: 35px;
   display: flex;
@@ -44,7 +55,7 @@ const MenuStyled = styled.section`
   float: left;
 `;
 
-const MenuBarStyled = styled.section`
+const MenuBarStyled = styled.div`
   width: 100%;
   height: 7px;
   border-radius: 5px;

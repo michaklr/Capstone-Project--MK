@@ -71,6 +71,7 @@ export default function SurveyPage({
           </button>
 
           <button
+            disabled={activeSurveyQuestion === 0}
             class="back"
             onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}
           >
