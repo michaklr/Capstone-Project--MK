@@ -5,6 +5,7 @@ import Board from "../common/Board";
 import React, { useEffect, useState } from "react";
 import UmfrageleisteText from "../common/UmfrageleisteText";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components/macro";
 
 export default function SurveyPage({
   surveyQuestions,
@@ -38,23 +39,55 @@ export default function SurveyPage({
       <NavBar />
       <HeaderSurvey activeSurveyQuestion={activeSurveyQuestion} />
 
-      {questionSurvey && (
-        <Board title="Survey" questionSurvey={questionSurvey} />
-      )}
-      <div>
-        <UmfrageleisteText
-          checkedAnswer={checkedAnswer}
-          setCheckedAnswer={setCheckedAnswer}
-        />
-      </div>
+      <SurveyWrapper>
+        <div>
+          <h4>
+            Question {activeSurveyQuestion + 1} / {surveyQuestions.length}
+          </h4>
 
-      <button disabled={!checkedAnswer} onClick={handleWeiterClick}>
-        Weiter
-      </button>
+          {questionSurvey && (
+            <Board
+              className="Board"
+              title="Survey"
+              questionSurvey={questionSurvey}
+            />
+          )}
+        </div>
+        <UmfrageWrapper>
+          <div>
+            <UmfrageleisteText
+              checkedAnswer={checkedAnswer}
+              setCheckedAnswer={setCheckedAnswer}
+            />
+          </div>
+        </UmfrageWrapper>
 
-      <button onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}>
-        Back
-      </button>
+        <button disabled={!checkedAnswer} onClick={handleWeiterClick}>
+          Next
+        </button>
+
+        <button
+          onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}
+        >
+          Back
+        </button>
+      </SurveyWrapper>
     </Page>
   );
 }
+
+const SurveyWrapper = styled.section`
+  margin-top: 70px;
+  h4 {
+    padding-left: 25px;
+    padding-bottom: 0px;
+  }
+`;
+
+const UmfrageWrapper = styled.section`
+  margin-top: 10px;
+`;
+
+const QuestionWrapper = styled.h4`
+  margin: 20px;
+`;
