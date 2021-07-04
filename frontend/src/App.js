@@ -42,7 +42,7 @@ function App() {
           <Route path={"/manual/survey/result"} exact>
             <ResultPage surveyAnswers={surveyAnswers} />
           </Route>
-          <Route path={"/manual/survey/result/help"} exact>
+          <Route path={"/manual/survey/result/places"} exact>
             <FindHelpPage places={places} />
           </Route>
         </Switch>
