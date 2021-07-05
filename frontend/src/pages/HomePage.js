@@ -1,5 +1,4 @@
 import Page from "../components/Page";
-import HeaderHomepage from "../components/HeaderHomepage";
 import React from "react";
 import styled from "styled-components/macro";
 import HeadlineUnderline from "../common/HeadlineUnderline";
@@ -18,7 +17,7 @@ export default function HomePage() {
     <Page>
       <MainNav />
       <HeaderImage>
-        <img src={therapy} width="600" />
+        <img src={therapy} width="600" alt={therapy} />
       </HeaderImage>
       <HeadlineUnderline>
         <h1>For a healthy mind!</h1>

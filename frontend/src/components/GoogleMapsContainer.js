@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { InfoWindow, GoogleMap, useLoadScript } from "@react-google-maps/api";
 import mapStyles from "../common/mapStyles";
 import { geolocated } from "react-geolocated";
@@ -57,8 +57,9 @@ function GoogleMapsContainer(props) {
                   <div>
                     <h2>{selected.name}</h2>
                     <p>{selected.vicinity}</p>
-                    <p>{selected.rating}</p>
-                    <img src={selected.icon} />
+                    <p>{selected.types}</p>
+                    <p> Rating: {selected.rating}</p>
+                    <img src={selected.icon} alt={"icon"} />
                   </div>
                 </InfoWrapper>
               </InfoWindow>

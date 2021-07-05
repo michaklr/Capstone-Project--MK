@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @Document(collection="therapist")
 @NoArgsConstructor
@@ -17,9 +19,9 @@ public class Therapist {
     private String place_id;
     private String vicinity;
     private String reference;
-    private String types;
-    private String rating;
-    private GeometryDto geometry;
+    private int rating;
     private String icon;
+    private GeometryDto geometry;
+    private List<String> types;
 
 }

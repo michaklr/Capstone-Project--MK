@@ -23,7 +23,7 @@ export default function MainNav() {
               <a href="/manual/survey">Zum Test</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="Contact">Contact</a>
             </li>
           </ul>
         </div>
