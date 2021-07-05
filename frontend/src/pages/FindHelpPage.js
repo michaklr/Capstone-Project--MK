@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
-
 import NavBar from "../components/NavBar";
 import styled from "styled-components/macro";
-import GoogleMapsContainer from "../components/GoogleMapsContainer";
 import LocationMap from "../components/LocationMap";
 
 export default function FindHelpPage({ places }) {
@@ -10,14 +7,15 @@ export default function FindHelpPage({ places }) {
     <div>
       <NavBar />
       <HeaderWrapper>
-        <h3>Helping Hands near you</h3>
+        <h2>Helping Hands near you</h2>
       </HeaderWrapper>
       <LocationMap places={places} />
     </div>
   );
 }
 
-const HeaderWrapper = styled.h3`
+const HeaderWrapper = styled.header`
   margin-top: 10px;
   text-align: center;
+  font-size: 20px;
 `;

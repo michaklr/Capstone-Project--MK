@@ -18,7 +18,8 @@ public class Therapist {
     private String vicinity;
     private String reference;
     private String types;
-    private int rating;
+    private String rating;
     private GeometryDto geometry;
+    private String icon;
 
 }
