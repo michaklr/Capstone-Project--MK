@@ -41,7 +41,9 @@ export default function ResultPage({ surveyAnswers }) {
       </Wrapper>
       <ButtonWrapper>
         <button>
-          <Link to={"/manual/survey/result/help"}>Find Help</Link>
+          <LinkStyled to={"/manual/survey/result/places"}>
+            Helping Hands
+          </LinkStyled>
         </button>
       </ButtonWrapper>
     </Page>
@@ -68,22 +70,24 @@ background-color: #CCE3DE
   padding: 25px 15px;
     `;
 
+const LinkStyled = styled(Link)`
+  color: black;
+`;
+
 const ButtonWrapper = styled.section`
-  padding-left: 25px;
-  padding-right: 25px;
-  text-decoration: none;
-
-
+  padding-left: 15px;
+  padding-right: 15px;
+ 
+ 
   button {
     background-color: #55aa8e;
     border-radius: 30px;
     border: none;
     box-shadow: none;
-    padding: 15px 45px;
+    padding: 10px 30px;
     text-transform: uppercase;
     -webkit-box-shadow: 0px 3px 15px 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 3px 15px 5px rgba(0, 0, 0, 0.1);
-    color: white;
     font-weight: bold;
     float: right;
     letter-spacing: 2px`;

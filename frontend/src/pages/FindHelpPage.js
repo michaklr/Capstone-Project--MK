@@ -11,7 +11,9 @@ export default function FindHelpPage({ places }) {
         <h2>Helping Hands near you</h2>
       </HeaderWrapper>
       <LocationMap places={places} />
-      <LocationList places={places} />
+      <LocationListWrapper>
+        <LocationList places={places} />
+      </LocationListWrapper>
     </div>
   );
 }
@@ -20,4 +22,8 @@ const HeaderWrapper = styled.header`
   margin-top: 10px;
   text-align: center;
   font-size: 20px;
+`;
+
+const LocationListWrapper = styled.section`
+  margin-top: 20px;
 `;

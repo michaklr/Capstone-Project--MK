@@ -7,7 +7,7 @@ BulletList.propTypes = {
   listType: PropTypes.resetWarningCache,
 };
 
-export default function BulletList({ children, listType = "bullet_circle" }) {
+export default function BulletList({ children, listType }) {
   return <ListContainer listType={listType}>{children}</ListContainer>;
 }
 
@@ -17,8 +17,6 @@ const ListContainer = styled.ul`
 
   li {
     list-style: none;
-    background: ${(props) =>
-      "url(/img/" + props.listType + ".svg) no-repeat left top;"};
     padding: 0px 0px 3px 27px;
     margin-bottom: 18px;
   }
