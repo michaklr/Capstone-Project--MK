@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import UmfrageleisteText from "../common/UmfrageleisteText";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
+import ImageDisplay from "../common/ImageDisplay";
 
 export default function SurveyPage({
   surveyQuestions,
@@ -25,7 +26,7 @@ export default function SurveyPage({
 
   const handleWeiterClick = () => {
     addAnswer(checkedAnswer, activeSurveyQuestion);
-    if (activeSurveyQuestion < 29) {
+    if (activeSurveyQuestion < 28) {
       setActiveSurveyQuestion(activeSurveyQuestion + 1);
     } else {
       submitAnswers();
@@ -38,6 +39,10 @@ export default function SurveyPage({
     <Page>
       <NavBar />
       <HeaderSurvey activeSurveyQuestion={activeSurveyQuestion} />
+
+      <ImageWrapper>
+        <ImageDisplay activeSurveyQuestion={activeSurveyQuestion} />
+      </ImageWrapper>
 
       <SurveyWrapper>
         <div>
@@ -64,7 +69,7 @@ export default function SurveyPage({
         <ButtonWrapper>
           <button
             disabled={!checkedAnswer}
-            class="forward"
+            className="forward"
             onClick={handleWeiterClick}
           >
             Next
@@ -72,7 +77,7 @@ export default function SurveyPage({
 
           <button
             disabled={activeSurveyQuestion === 0}
-            class="back"
+            className="back"
             onClick={() => setActiveSurveyQuestion(activeSurveyQuestion - 1)}
           >
             Back
@@ -84,7 +89,7 @@ export default function SurveyPage({
 }
 
 const SurveyWrapper = styled.section`
-  margin-top: 70px;
+  margin-top: 20px;
   h4 {
     padding-left: 25px;
     padding-bottom: 0px;
@@ -124,5 +129,11 @@ const ButtonWrapper = styled.section`
     &.forward {
       float: right;
     }
+  }
+`;
+
+const ImageWrapper = styled.div`
+  img {
+    max-width: 160px;
   }
 `;
