@@ -23,44 +23,34 @@ export default function HomePage() {
         <h1>For a healthy mind!</h1>
       </HeadlineUnderline>
       <FronttextWrapper>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
-        </p>
+        <div>
+          {" "}
+          <p>
+            HELPING HANDS ist eine App, die Sie dabei unterstützen möchte,
+            mögliche seelische Belastungen oder Leidensdruck zu erkennen und
+            besser zu verstehen.
+          </p>
+        </div>
       </FronttextWrapper>
       <Collapse headline="About Helping Hands">
         <IconStyled />
         <CollapseTextWrapper>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-            dolor sit amet.
-          </p>
+          <div>
+            Mit Hilfe weniger gezielter Fragen ermittelt die App einschlägige
+            Symptome. Helping Hands darf kein Ersatz für fachärztliche Diagnosen
+            und Therapieanweisungen sein. Die App kann jedoch praktische Tipps
+            zur Linderung geben, möglicherweise zu einem Gespräch mit
+            psychologischen Psychotherapeuten raten und bei der Suche nach
+            geeigneten Therapeuten (Helping Hands) in Ihrer Nähe helfen.
+          </div>
         </CollapseTextWrapper>
       </Collapse>
 
       <CardContainer>
         <HomepageCard>
           <BulletList>
-            <li>Entdecken Sie Ihre individuellen Persönlichkeitsstile.</li>
-            <li>
-              Entwickeln Sie ein besseres Verständnis für sich selbst in
-              zwischenmenschlichen Beziehungen.
-            </li>
+            <li>Ordnen Sie mögliche Symptome ein.</li>
+            <li>Entwickeln Sie ein besseres Verständnis für sich selbst.</li>
             <li>
               Profitieren Sie von speziell auf Sie zugeschnittenen Tipps für
               Alltagssituationen.
@@ -159,6 +149,10 @@ const ButtonFixedWrapper = styled.section`
 const FronttextWrapper = styled.section`
   padding: 20px;
   margin-left: 10px;
+
+  p {
+    text-align: justify;
+  }
 `;
 
 const StyledLink = styled(Link)`

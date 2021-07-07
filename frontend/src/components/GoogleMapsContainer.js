@@ -48,7 +48,6 @@ function GoogleMapsContainer(props) {
             places={places}
             onClick={() => {
               setSelected(places);
-              console.log(places);
             }}
           >
             {selected?.place_id === places.place_id && (
