@@ -2,6 +2,7 @@ import React from "react";
 import "./MainNav.css";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
+import logo from "../img/logo.svg";
 
 export default function MainNav() {
   return (
@@ -15,22 +16,29 @@ export default function MainNav() {
 
           <ul id="menu">
             <li>
-              <LinkStyled to="/">Home</LinkStyled>
+              <LinkStyled to="/">
+                <strong>Home</strong>
+              </LinkStyled>
             </li>
             <li>
-              <LinkStyled to="/manual">Anleitung</LinkStyled>
+              <LinkStyled to="/manual">
+                <strong>Anleitung</strong>
+              </LinkStyled>
             </li>
             <li>
-              <LinkStyled to="/manual/survey">Zum Test</LinkStyled>
+              <LinkStyled to="/manual/survey">
+                <strong>Zum Test</strong>
+              </LinkStyled>
             </li>
             <li>
               <LinkStyled to="/manual/survey/result/places">
-                Find help
+                <strong>Find help</strong>
               </LinkStyled>
             </li>
           </ul>
         </div>
       </nav>
+      <img src={logo} alt={logo} className={"center"} />
     </HeaderContainer>
   );
 }
@@ -46,6 +54,15 @@ const HeaderContainer = styled.header`
   align-items: center;
   -webkit-box-shadow: 2px 7px 21px 0px rgba(196, 196, 196, 0.57);
   box-shadow: 2px 7px 21px 0px rgba(196, 196, 196, 0.57);
+
+  .center {
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    padding-right: auto;
+    margin-bottom: 10px;
+    width: 55%;
+  }
 `;
 
 const LinkStyled = styled(Link)`

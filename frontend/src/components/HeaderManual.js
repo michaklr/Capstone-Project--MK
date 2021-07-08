@@ -13,4 +13,8 @@ export default function HeaderManual() {
 
 const Wrapper = styled.header`
   text-align: center;
+
+  h1 {
+    font-size: 35px;
+  }
 `;

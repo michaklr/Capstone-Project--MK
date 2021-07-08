@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 export default function HeaderErgebnis() {
   return (
     <Wrapper>
-      <h1>Auswertung</h1>
+      <h1> Deine Auswertung</h1>
     </Wrapper>
   );
 }

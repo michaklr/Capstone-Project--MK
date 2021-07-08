@@ -74,6 +74,10 @@ const CardContainer = styled.section`
   overflow: scroll;
   -webkit-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
+
+  div {
+    text-align: justify;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -116,6 +120,5 @@ const ManualImage = styled.section`
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    margin-bottom: 15px;
   }
 `;

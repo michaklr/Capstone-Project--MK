@@ -20,13 +20,12 @@ export default function HomePage() {
         <img src={therapy} width="600" alt={therapy} />
       </HeaderImage>
       <HeadlineUnderline>
-        <h1>For a healthy mind!</h1>
+        <h1>For a healthy mind</h1>
       </HeadlineUnderline>
       <FronttextWrapper>
         <div>
-          {" "}
           <p>
-            HELPING HANDS ist eine App, die Sie dabei unterstützen möchte,
+            HELPING HANDS ist eine Plattform, die Sie dabei unterstützen möchte,
             mögliche seelische Belastungen oder Leidensdruck zu erkennen und
             besser zu verstehen.
           </p>

@@ -101,10 +101,10 @@ nav {
     position: absolute;
     border-radius: 0 0 10px 10px;
     width: 180px;
-    height: 603px;
+    height: 360px;
     box-shadow: 0 0 10px #85888C;
     margin: -50px 0 0 -50px;
-    padding: 50px;
+    padding: 40px;
     padding-top: 125px;
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 24%, rgba(246,255,248,1) 86%);

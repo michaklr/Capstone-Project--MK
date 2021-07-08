@@ -5,12 +5,16 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   
-  html, body {
-    padding: 0.5px;
-    padding-bottom: 60px;
+  html {
+  padding: 0.5px;
     font-size: 100%;
-   
-    
+    padding-bottom: 45px;
+  }
+  
+  body {
+    padding: 0.5px;
+   padding-bottom: 50px;
+    font-size: 100%;
    
   }
   
