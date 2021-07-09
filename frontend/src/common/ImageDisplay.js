@@ -1,8 +1,10 @@
 import Depression from "../img/Depression.svg";
 import Angst from "../img/Angst.svg";
-import Start from "../img/Start.svg";
+import Zwang from "../img/Zwang.svg";
 import Somatoform from "../img/Somatoform.svg";
 import Essen from "../img/Essen.svg";
+import Trauma from "../img/Trauma.svg";
+import Funktion from "../img/Funktion.svg";
 import styled from "styled-components/macro";
 
 export default function ImageDisplay(activeSurveyQuestion) {
@@ -27,7 +29,7 @@ export default function ImageDisplay(activeSurveyQuestion) {
   ) {
     return (
       <StyledWrapper>
-        <img src={Start} alt={Start} className={"center"} />
+        <img src={Zwang} alt={Zwang} className={"center"} />
       </StyledWrapper>
     );
   } else if (activeSurveyQuestion.activeSurveyQuestion === 13) {
@@ -45,7 +47,26 @@ export default function ImageDisplay(activeSurveyQuestion) {
         <img src={Essen} alt={Essen} className={"center"} />
       </StyledWrapper>
     );
+  } else if (
+    activeSurveyQuestion.activeSurveyQuestion >= 22 &&
+    activeSurveyQuestion.activeSurveyQuestion < 26
+  ) {
+    return (
+      <StyledWrapper>
+        <img src={Trauma} alt={Trauma} className={"center"} />
+      </StyledWrapper>
+    );
+  } else if (
+    activeSurveyQuestion.activeSurveyQuestion >= 26 &&
+    activeSurveyQuestion.activeSurveyQuestion < 29
+  ) {
+    return (
+      <StyledWrapper>
+        <img src={Funktion} alt={Funktion} className={"center"} />
+      </StyledWrapper>
+    );
   }
+  return null;
 }
 
 const StyledWrapper = styled.section`
