@@ -28,7 +28,7 @@ const CardContainer = styled.section`
 const Wrapper = styled.section`
 background-color: #CCE3DE
   border-radius: 0;
-  padding: 25px 15px;
+  padding: 10px 15px 25px;
   
   ul {
   list-style: none;

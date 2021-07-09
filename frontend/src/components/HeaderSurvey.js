@@ -1,4 +1,3 @@
-import styled from "styled-components/macro";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import React from "react";
 

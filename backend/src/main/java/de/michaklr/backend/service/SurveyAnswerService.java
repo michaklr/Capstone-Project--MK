@@ -9,19 +9,9 @@ public class SurveyAnswerService {
 
     public ResultAnswers evaluateAnswers(AnswersDto answersDto) {
 
-        int depressionsLevel = 0;
-        int angstLevel= 0;
-        int zwangLevel = 0;
-        int somaLevel= 0;
-        int essVerhaltenLevel = 0;
-
-
         ResultAnswers results = new ResultAnswers();
 
-
-        if (answersDto.getAnswer_0().equals("Trifft nicht zu")) {
-            depressionsLevel += 0;
-        }
+        int depressionsLevel = 0;
         if (answersDto.getAnswer_0().equals("Trifft kaum zu")) {
             depressionsLevel += 1;
         }
@@ -36,9 +26,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_1().equals("Trifft nicht zu")) {
-            depressionsLevel += 0;
-        }
         if (answersDto.getAnswer_1().equals("Trifft kaum zu")) {
             depressionsLevel += 1;
         }
@@ -53,9 +40,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_2().equals("Trifft nicht zu")) {
-            depressionsLevel += 0;
-        }
         if (answersDto.getAnswer_2().equals("Trifft kaum zu")) {
             depressionsLevel += 1;
         }
@@ -70,9 +54,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_3().equals("Trifft nicht zu")) {
-            depressionsLevel += 0;
-        }
         if (answersDto.getAnswer_3().equals("Trifft kaum zu")) {
             depressionsLevel += 1;
         }
@@ -86,22 +67,18 @@ public class SurveyAnswerService {
             depressionsLevel += 4;
         }
 
-        int depressionsScore = depressionsLevel/4;
-        if (depressionsScore <= 0.75){
-           results.setDepressionResult("Es liegt ein Verdacht vor");
-        } else if (depressionsScore > 0.75 && depressionsScore <= 1){
-            results.setDepressionResult("Es liegen nur geringe Symptome vor.");
-        } else if (depressionsScore > 1 && depressionsScore <= 2){
-            results.setDepressionResult( "Es liegen verstärkte Symptome vor.");
-        }else if (depressionsScore > 2 && depressionsScore <= 3){
-            results.setDepressionResult( "Depression: Es liegen schwere Symptome vor.");
+        int depressionsScore = depressionsLevel / 4;
+        if (depressionsScore <= 0.75) {
+            results.setDepressionResult("Ihre Beantwortung der Fragen weist auf eine sehr geringe Symptombelastung im Bereich Depression hin. ");
+        } else if (depressionsScore > 0.75 && depressionsScore <= 1) {
+            results.setDepressionResult("Ihre Beantwortung der Fragen weist auf eine geringe Symptombelastung im Bereich Depression hin. ");
+        } else if (depressionsScore == 2) {
+            results.setDepressionResult("Ihre Beantwortung der Fragen weist auf eine mittlere Symptombelastung im Bereich Depression hin. \n Ein Gespräch mit einem Psychotherapeuten wird angeraten. ");
+        } else if (depressionsScore == 3) {
+            results.setDepressionResult("Ihre Beantwortung der Fragen weist auf eine schwere Symptombelastung im Bereich Depression hin. \n Ein Gespräch mit einem Psychotherapeuten wird dringend angeraten. ");
         }
 
-
-
-        if (answersDto.getAnswer_4().equals("Trifft nicht zu")) {
-            angstLevel += 0;
-        }
+        int angstLevel = 0;
         if (answersDto.getAnswer_4().equals("Trifft kaum zu")) {
             angstLevel += 1;
         }
@@ -115,9 +92,7 @@ public class SurveyAnswerService {
             angstLevel += 4;
         }
 
-        if (answersDto.getAnswer_5().equals("Trifft nicht zu")) {
-            angstLevel += 0;
-        }
+
         if (answersDto.getAnswer_5().equals("Trifft kaum zu")) {
             angstLevel += 1;
         }
@@ -131,9 +106,7 @@ public class SurveyAnswerService {
             angstLevel += 4;
         }
 
-        if (answersDto.getAnswer_6().equals("Trifft nicht zu")) {
-            angstLevel += 0;
-        }
+
         if (answersDto.getAnswer_6().equals("Trifft kaum zu")) {
             angstLevel += 1;
         }
@@ -147,9 +120,7 @@ public class SurveyAnswerService {
             angstLevel += 4;
         }
 
-        if (answersDto.getAnswer_7().equals("Trifft nicht zu")) {
-            angstLevel += 0;
-        }
+
         if (answersDto.getAnswer_7().equals("Trifft kaum zu")) {
             angstLevel += 1;
         }
@@ -164,24 +135,19 @@ public class SurveyAnswerService {
         }
 
 
-        int angstScore = angstLevel/4;
+        int angstScore = angstLevel / 4;
 
-        if (angstScore <= 0.75){
-            results.setAngstResult("Es liegt ein Verdacht vor.");
-        } else if (angstScore > 0.75 && angstScore <= 1){
-            results.setAngstResult( "Es liegt nur geringe Symptome vor.");
-        } else if (angstScore > 1 && angstScore <= 2){
-            results.setAngstResult( "Es liegen verstärkte Symptome vor.");
-        }else if (angstScore > 2 && angstScore <= 3){
-            results.setAngstResult( "Es liegen schwere Symptome vor.");
+        if (angstScore <= 0.75) {
+            results.setAngstResult("Im Bereich Angst liegt eine sehr geringe Symptombelastung vor. ");
+        } else if (angstScore > 0.75 && angstScore <= 1) {
+            results.setAngstResult("Im Bereich Angst liegt eine geringe Symptombelastung vor. ");
+        } else if (angstScore == 2) {
+            results.setAngstResult("Im Bereich Angst liegt eine mittlere Symptombelastung vor. \n Wir raten Ihnen zu einem Gespräch mit einem Psychotherapeuten. ");
+        } else if (angstScore == 3) {
+            results.setAngstResult("Im Bereich Angst liegt eine schwere Symptombelastung vor. \n Wir raten Ihnen dringend zu einem Gespräch mit einem Psychotherapeuten. ");
         }
 
-
-
-
-        if (answersDto.getAnswer_8().equals("Trifft nicht zu")) {
-            zwangLevel += 0;
-        }
+        int zwangLevel = 0;
         if (answersDto.getAnswer_8().equals("Trifft kaum zu")) {
             zwangLevel += 1;
         }
@@ -196,9 +162,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_9().equals("Trifft nicht zu")) {
-            zwangLevel += 0;
-        }
         if (answersDto.getAnswer_9().equals("Trifft kaum zu")) {
             zwangLevel += 1;
         }
@@ -213,9 +176,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_10().equals("Trifft nicht zu")) {
-            zwangLevel += 0;
-        }
         if (answersDto.getAnswer_10().equals("Trifft kaum zu")) {
             zwangLevel += 1;
         }
@@ -229,24 +189,18 @@ public class SurveyAnswerService {
             zwangLevel += 4;
         }
 
-        int zwangScore = zwangLevel/3;
-        if (zwangScore <= 0.67){
-            results.setZwangResult("Es liegt ein Verdacht vor.");
-        } else if (zwangScore > 0.67 && zwangScore <= 1.0){
-            results.setZwangResult( "Es liegen nur geringe Symptome vor.");
-        } else if (zwangScore > 1.0 && zwangScore <= 2.0){
-            results.setZwangResult( "Es liegen verstärkte Symptome vor.");
-        }else if (zwangScore > 2.0 && zwangScore <= 3.0){
-            results.setZwangResult( "Es liegen schwere Symptome vor.");
+        int zwangScore = zwangLevel / 3;
+        if (zwangScore <= 0.67) {
+            results.setZwangResult("Im Bereich Zwänge bzw. zwanghaftes Verhalten liegt eine sehr geringe Symptombelastung vor. ");
+        } else if (zwangScore > 0.67 && zwangScore <= 1.0) {
+            results.setZwangResult("Im Bereich Zwänge bzw. zwanghaftes Verhalten liegt eine geringe Symptombelastung vor. ");
+        } else if (zwangScore > 1.0 && zwangScore <= 2.0) {
+            results.setZwangResult("Im Bereich Zwänge bzw. zwanghaftes Verhalten liegt eine sehr mittlere Symptombelastung vor. \n Wir raten Ihnen zu einem Gespräch mit einem Psychotherapeuten. ");
+        } else if (zwangScore > 2.0 && zwangScore <= 3.0) {
+            results.setZwangResult("Es liegen schwere Symptome vor. \n Wir raten Ihnen zu einem Gespräch mit einem Psychotherapeuten. ");
         }
 
-
-
-
-
-        if (answersDto.getAnswer_11().equals("Trifft nicht zu")) {
-            somaLevel += 0;
-        }
+        int somaLevel = 0;
         if (answersDto.getAnswer_11().equals("Trifft kaum zu")) {
             somaLevel += 1;
         }
@@ -261,9 +215,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_12().equals("Trifft nicht zu")) {
-            somaLevel += 0;
-        }
         if (answersDto.getAnswer_12().equals("Trifft kaum zu")) {
             somaLevel += 1;
         }
@@ -278,9 +229,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_13().equals("Trifft nicht zu")) {
-            somaLevel += 0;
-        }
         if (answersDto.getAnswer_13().equals("Trifft kaum zu")) {
             somaLevel += 1;
         }
@@ -294,27 +242,31 @@ public class SurveyAnswerService {
             somaLevel += 4;
         }
 
-        int somaScore = somaLevel/3;
+        int somaScore = somaLevel / 3;
 
-        if (somaScore <= 0.33){
-            results.setSomaResult("Es liegt ein Verdacht vor.");
-        } else if (somaScore > 0.33 && somaScore <= 0.75){
-            results.setSomaResult( "Es liegen nur geringe Symptome vor.");
-        } else if (somaScore > 0.75 && somaScore <= 1.25){
-            results.setSomaResult( "Es liegen verstärkte Symptome vor.");
-        }else if (somaScore > 1.25 && somaScore <= 2.67){
-           results.setSomaResult( "Es liegen schwere Symptome vor.");
+        if (somaScore <= 0.33) {
+            results.setSomaResult
+                    ("Im Bereich somataforme Störung liegt eine sehr geringe Symptombelastung vor. \n " +
+                            "Von einer somatoformen Störung spricht man, wenn körperliche Beschwerden wiederholt auftreten, " +
+                            "über längere Zeit bestehen und sich trotz intensiver Diagnostik keine ausreichend erklärenden organischen Befunde feststellen lassen.");
+        } else if (somaScore > 0.33 && somaScore <= 0.75) {
+            results.setSomaResult
+                    ("Im Bereich somataforme Störung liegt eine geringe Symptombelastung vor. \n" +
+                            "Von einer somatoformen Störung spricht man, wenn körperliche Beschwerden wiederholt auftreten, " +
+                            "über längere Zeit bestehen und sich trotz intensiver Diagnostik keine ausreichend erklärenden organischen Befunde feststellen lassen.");
+        } else if (somaScore > 0.75 && somaScore <= 1.25) {
+            results.setSomaResult
+                    ("Im Bereich somatoforme Störung liegt mittlere Symptombelastung vor. /n Wir raten Ihnen zu einem Gespräch mit einem Psychotherapeuten. \n " +
+                            "Von einer somatoformen Störung spricht man, wenn körperliche Beschwerden wiederholt auftreten, " +
+                            "über längere Zeit bestehen und sich trotz intensiver Diagnostik keine ausreichend erklärenden organischen Befunde feststellen lassen. ");
+        } else if (somaScore > 1.25 && somaScore <= 2.67) {
+            results.setSomaResult("""
+                    Im Bereich somatoforme Störung liegt eine sehr schwere Symptombelastung vor.\s
+                     Wir raten Ihnen zu einem Gespräch mit einem Psychotherapeuten.\s
+                    Von einer somatoformen Störung spricht man, wenn körperliche Beschwerden wiederholt auftreten, über längere Zeit bestehen und sich trotz intensiver Diagnostik keine ausreichend erklärenden organischen Befunde feststellen lassen.""");
         }
 
-
-
-
-
-
-        if (answersDto.getAnswer_14().equals("Trifft nicht zu")) {
-
-            essVerhaltenLevel += 0;
-        }
+        int essVerhaltenLevel = 0;
         if (answersDto.getAnswer_14().equals("Trifft kaum zu")) {
             essVerhaltenLevel += 1;
         }
@@ -329,9 +281,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_15().equals("Trifft nicht zu")) {
-            essVerhaltenLevel += 0;
-        }
         if (answersDto.getAnswer_15().equals("Trifft kaum zu")) {
             essVerhaltenLevel += 1;
         }
@@ -346,9 +295,6 @@ public class SurveyAnswerService {
         }
 
 
-        if (answersDto.getAnswer_16().equals("Trifft nicht zu")) {
-            essVerhaltenLevel += 0;
-        }
         if (answersDto.getAnswer_16().equals("Trifft kaum zu")) {
             essVerhaltenLevel += 1;
         }
@@ -362,301 +308,317 @@ public class SurveyAnswerService {
             essVerhaltenLevel += 4;
         }
 
-        int essStörungScore = essVerhaltenLevel/4;
+        int essenScore = essVerhaltenLevel / 4;
 
-        if (essStörungScore <= 0.33){
-            results.setEssVerhaltenResult("Es liegt ein Verdacht vor.");
-        } else if (essStörungScore > 0.33 && essStörungScore <= 0.67){
-            results.setEssVerhaltenResult( "Es liegen nur geringe Symptome vor.");
-        } else if (essStörungScore > 0.67 && essStörungScore <= 1.5){
-            results.setEssVerhaltenResult( "Es liegen verstärkte Symptome vor.");
-        }else if (essStörungScore > 1.5 && essStörungScore <= 2.75){
-            results.setEssVerhaltenResult( "Es liegen schwere Symptome vor.");
+        if (essenScore <= 0.33) {
+            results.setEssVerhaltenResult("Im Bereich Essstörung liegt eine sehr geringe Symptombelastung vor.");
+        } else if (essenScore > 0.33 && essenScore <= 0.67) {
+            results.setEssVerhaltenResult("Im Bereich Essstörung liegt eine geringe Symptombelastung vor.");
+        } else if (essenScore > 0.67 && essenScore <= 1.5) {
+            results.setEssVerhaltenResult("Im Bereich Essstörung liegt eine sehr mittlere Symptombelastung vor. \n Wir raten Ihnen ein Gespräch mit einem Psychotherapeuten zu führen");
+        } else if (essenScore > 1.5 && essenScore <= 2.75) {
+            results.setEssVerhaltenResult("Im Bereich Essstörung liegt eine schwere Symptombelastung vor. \n Wir raten Ihnen ein Gespräch mit einem Psychotherapeuten zu führen");
         }
 
 
-
-       boolean[] zusatzFragen = {false,false,false,false,false,false,false,false,false,false,false,false,};
-
-        int zusatzLevel = 0;
-
-        if (answersDto.getAnswer_17().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-        }
+        int konzentrationLevel = 0;
 
         if (answersDto.getAnswer_17().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[0]= true;
+            konzentrationLevel += 1;
+
         }
         if (answersDto.getAnswer_17().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[0]= true;
+            konzentrationLevel += 2;
+
         }
         if (answersDto.getAnswer_17().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[0]= true;
+            konzentrationLevel += 3;
+
         }
         if (answersDto.getAnswer_17().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[0]= true;
+            konzentrationLevel += 4;
+
+        }
+
+        int konzentrationScore = konzentrationLevel;
+
+        if (konzentrationScore >= 2) {
+            results.setKonzentrationResult("Ihre Konzentrationsfähigkeit scheint geschwächt zu sein. Sie sollten die Ursachen mit einem Psychotherapeuten oder Arzt besprechen. ");
         }
 
 
-        if (answersDto.getAnswer_18().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[1]= true;
+        int suizidLevel = 0;
 
-        }
+
         if (answersDto.getAnswer_18().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[1]= true;
+            suizidLevel += 1;
+
         }
         if (answersDto.getAnswer_18().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[1]= true;
+            suizidLevel += 2;
+
         }
         if (answersDto.getAnswer_18().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[1]= true;
+            suizidLevel += 3;
+
         }
         if (answersDto.getAnswer_18().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[1]= true;
+            suizidLevel += 4;
+
+        }
+
+        int suizidScore = suizidLevel;
+        if (suizidScore > 1) {
+            results.setSuizidResult("Es liegen lebensmüde oder suizidale Gedanken vor. Sollten diese intensiv und aufdrängend sein, sollten Sie umgehend an einem psychiatrischen Krankenhaus vorstellig werden. Dort kann Ihnen sofort geholfen werden! ");
         }
 
 
-        if (answersDto.getAnswer_19().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[2]= true;
-        }
+        int schlafLevel = 0;
+
         if (answersDto.getAnswer_19().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[2]= true;
+            schlafLevel += 1;
+
         }
         if (answersDto.getAnswer_19().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[2]= true;
+            schlafLevel += 2;
+
         }
         if (answersDto.getAnswer_19().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[2]= true;
+            schlafLevel += 3;
+
         }
         if (answersDto.getAnswer_19().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[2]= true;
+            schlafLevel += 4;
+
+        }
+
+        int schlafScore = schlafLevel;
+
+        if (schlafScore > 2) {
+            results.setSchlafResult("Sie scheinen Probleme zu haben ein bzw. durchzuschlafen. Die Ursachen können körperlicher oder psychischer Natur sein und sollten mit einem Arzt oder Psychotherapeuten besprochen werden");
         }
 
 
-        if (answersDto.getAnswer_20().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[3]= true;
-        }
+        int appetitLevel = 0;
+
+
         if (answersDto.getAnswer_20().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[3]= true;
+            appetitLevel += 1;
+
         }
         if (answersDto.getAnswer_20().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[3]= true;
+            appetitLevel += 2;
+
         }
         if (answersDto.getAnswer_20().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[3]= true;
+            appetitLevel += 3;
+
         }
         if (answersDto.getAnswer_20().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[3]= true;
+            appetitLevel += 4;
+
+        }
+
+        int appetitScore = appetitLevel;
+        if (appetitScore > 1) {
+            results.setAppetitResult("Sie scheinen unter Appetitlosigkeit zu leiden. Die Ursachen können körperlicher oder psychischer Natur sein und sollten mit einem Arzt oder Psychotherapeuten besprochen werden. ");
         }
 
 
-        if (answersDto.getAnswer_21().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[4]= true;
-        }
+        int merkLevel = 0;
+
         if (answersDto.getAnswer_21().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[4]= true;
+            merkLevel += 1;
+
         }
         if (answersDto.getAnswer_21().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[4]= true;
+            merkLevel += 2;
+
         }
         if (answersDto.getAnswer_21().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[4]= true;
+            merkLevel += 3;
+
         }
         if (answersDto.getAnswer_21().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[4]= true;
+            merkLevel += 4;
+
+        }
+        int merkScore = merkLevel;
+        if (merkScore > 1) {
+            results.setMerkResult("Ihr Erinnerungsvermögen scheint belastet zu sein. Die Ursachen können körperlicher oder psychischer Natur sein und sollten mit einem Arzt oder Psychotherapeuten besprochen werden. ");
         }
 
 
-        if (answersDto.getAnswer_22().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[5]= true;
-        }
+        int traumaLevel = 0;
+
         if (answersDto.getAnswer_22().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[5]= true;
+            traumaLevel += 1;
+
         }
         if (answersDto.getAnswer_22().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[5]= true;
+            traumaLevel += 2;
+
         }
         if (answersDto.getAnswer_22().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[5]= true;
+            traumaLevel += 3;
+
         }
         if (answersDto.getAnswer_22().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[5]= true;
+            traumaLevel += 4;
+
+        }
+        int traumaScore = traumaLevel;
+        if (traumaScore > 1) {
+            results.setTraumaResult("Es liegen belastende post-traumatische Erlebnisse vor. Wir empfehlen Ihnen dringend einen Psychotherapeuten zu konsultieren.");
         }
 
+        int schicksalLevel = 0;
 
-        if (answersDto.getAnswer_23().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[6]= true;
-        }
         if (answersDto.getAnswer_23().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[6]= true;
+            schicksalLevel += 1;
+
         }
         if (answersDto.getAnswer_23().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[6]= true;
+            schicksalLevel += 2;
+
         }
         if (answersDto.getAnswer_23().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[6]= true;
+            schicksalLevel += 3;
+
         }
         if (answersDto.getAnswer_23().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[6]= true;
+            schicksalLevel += 4;
+
+        }
+
+        int schicksalScore = schicksalLevel;
+        if (schicksalScore > 1) {
+            results.setSchicksalResult("Sie scheinen in Ihrem Leben mit schweren Schicksalsschlägen konfrontiert zu sein. Ein Gespräch mit einem Psychotherapeuten hilft diese negativen Erfahrungen besser zu verstehen und zu verarbeiten. ");
         }
 
 
-        if (answersDto.getAnswer_24().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[7]= true;
-        }
+        int bodyLevel = 0;
+
         if (answersDto.getAnswer_24().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[7]= true;
+            bodyLevel += 1;
+
         }
         if (answersDto.getAnswer_24().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[7]= true;
+            bodyLevel += 2;
+
         }
         if (answersDto.getAnswer_24().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[7]= true;
+            bodyLevel += 3;
+
         }
         if (answersDto.getAnswer_24().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[7]= true;
+            bodyLevel += 4;
+
         }
 
-        if (answersDto.getAnswer_25().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[8]= true;
+        int bodyScore = bodyLevel;
+        if (bodyScore > 1) {
+            results.setBodyResult(" Sie empfinden Ihre Gefühle und Erfahrungen nicht mehr als Ihre eigenen. Häufig äußern sich derartige Symptome bei einer Dissoziationsstörung. Ein Gespräch mit einem Psychotherapeuten wird dringend angeraten.");
         }
+
+
+        int umgebungLevel = 0;
+
         if (answersDto.getAnswer_25().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[8]= true;
+            umgebungLevel += 1;
+
         }
         if (answersDto.getAnswer_25().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[8]= true;
+            umgebungLevel += 2;
+
         }
         if (answersDto.getAnswer_25().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[8]= true;
+            umgebungLevel += 3;
+
         }
         if (answersDto.getAnswer_25().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[8]= true;
+            umgebungLevel += 4;
+
         }
 
-        if (answersDto.getAnswer_26().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[9]= true;
+        int umgebungScore = umgebungLevel;
+        if (umgebungScore > 1) {
+            results.setUmgebungResult("Sie empfinden Ihre Umgebung als unwirklich, wie weit weg oder surreal. Häufig äußern sich derartige Symptome bei einer Dissoziationsstörung. Ein Gespräch mit einem Psychotherapeuten wird dringend angeraten");
         }
+
+
+        int verlangenLevel = 0;
+
         if (answersDto.getAnswer_26().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[9]= true;
+            verlangenLevel += 1;
+
         }
         if (answersDto.getAnswer_26().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[9]= true;
+            verlangenLevel += 2;
+
         }
         if (answersDto.getAnswer_26().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[9]= true;
+            verlangenLevel += 3;
+
         }
         if (answersDto.getAnswer_26().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[9]= true;
+            verlangenLevel += 4;
+
+        }
+
+        int verlangenScore = verlangenLevel;
+        if (verlangenScore > 1) {
+            results.setVerlangenResult("Im Bereich der Sexualität ist eine stärkere Symptombelastung erkennbar. Sollte die Ausübung Ihrer Sexualität Ihren Lebensalltag und Ihr Wohlergehen stark beeinflussen, raten wir zu einem Gespräch mit einem Psychotherapeuten. ");
         }
 
 
-        if (answersDto.getAnswer_27().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[10]= true;
-        }
+        int verletzungLevel = 0;
+
         if (answersDto.getAnswer_27().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[10]= true;
+            verletzungLevel += 1;
+
         }
         if (answersDto.getAnswer_27().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[10]= true;
+            verletzungLevel += 2;
+
         }
         if (answersDto.getAnswer_27().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[10]= true;
+            verletzungLevel += 3;
+
         }
         if (answersDto.getAnswer_27().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[10]= true;
+            verletzungLevel += 4;
+
+        }
+        int verletzungScore = verletzungLevel;
+        if (verletzungScore > 1) {
+            results.setVerletzungResult("Im Bereich extreme Belastungen, die sich auf Ihre Persönlichkeit auswirken, liegt eine verstärkte Symptombelastung vor. Wir raten zu einem Gespräch mit einem Psychotherapeuten. ");
         }
 
-        if (answersDto.getAnswer_28().equals("Trifft nicht zu")) {
-            zusatzLevel += 0;
-            zusatzFragen[11]= true;
-        }
+
+        int vorliebeLevel = 0;
+
         if (answersDto.getAnswer_28().equals("Trifft kaum zu")) {
-            zusatzLevel += 1;
-            zusatzFragen[11]= true;
+            vorliebeLevel += 1;
+
         }
         if (answersDto.getAnswer_28().equals("Trifft ziemlich zu")) {
-            zusatzLevel += 2;
-            zusatzFragen[11]= true;
+            vorliebeLevel += 2;
+
         }
         if (answersDto.getAnswer_28().equals("Trifft deutlich zu")) {
-            zusatzLevel += 3;
-            zusatzFragen[11]= true;
+            vorliebeLevel += 3;
+
         }
         if (answersDto.getAnswer_28().equals("Trifft extrem zu")) {
-            zusatzLevel += 4;
-            zusatzFragen[11]= true;
+            vorliebeLevel += 4;
+
         }
 
-        int zusatzScore= zusatzLevel/12;
-        if (zusatzScore > 1){
-            results.setZusatzResult(" Es liegt eine Tendenz in eine der Zusatzfragen vor.");
-        }
+        int vorliebeScore = vorliebeLevel;
+        if (vorliebeScore > 1) {
+            results.setVorliebeResult("Im Bereich der Sexualität ist eine stärkere Symptombelastung erkennbar. Sollte die Ausübung Ihrer Sexualität Ihren Lebensalltag und Ihr Wohlergehen stark beeinflussen, raten wir zu einem Gespräch mit einem Psychotherapeuten. ");
 
-
-        int gesamtScore = depressionsScore + angstScore + zwangScore + somaScore + essStörungScore + zusatzScore + zusatzScore/ 7;
-
-        if (gesamtScore <= 0.5){
-            results.setGesamtResult("Es liegt ein Verdacht vor.");
-        } else if (essStörungScore > 0.5 && essStörungScore <= 0.6){
-            results.setGesamtResult( "Es liegen nur geringe Symptome vor.");
-        } else if (essStörungScore > 0.6 && essStörungScore <= 0.9){
-            results.setGesamtResult( "Es liegen verstärkte Symptome vor.");
-        }else if (essStörungScore > 0.9 && essStörungScore <= 1.7){
-            results.setGesamtResult( "Es liegen schwere Symptome vor.");
         }
 
         return results;

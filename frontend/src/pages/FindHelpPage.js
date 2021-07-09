@@ -1,51 +1,42 @@
-import React from "react";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import NavBar from "../components/NavBar";
+import styled from "styled-components/macro";
+import LocationMap from "../components/LocationMap";
+import LocationList from "../components/LocationList";
+import HeadlineUnderline from "../common/HeadlineUnderline";
+import FinePrint from "../common/FinePrint";
 
-import mapStyles from "../common/mapStyles";
-import { geolocated } from "react-geolocated";
-
-const libraries = ["places"];
-const mapContainerStyle = {
-  width: "100vw",
-  height: "50vh",
-};
-
-const options = {
-  styles: mapStyles,
-  disableDefaultUI: true,
-  zoomControl: true,
-};
-
-function FindHelpPage(props) {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    libraries,
-  });
-
-  const center = {
-    lat: props.coords ? props.coords.latitude : 50.935173,
-    lng: props.coords ? props.coords.longitude : 6.953101,
-  };
-
-  if (loadError) return "Error loading maps";
-  if (!isLoaded) return "Loading Maps";
-
+export default function FindHelpPage({ places }) {
   return (
     <div>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        zoom={8}
-        center={center}
-        options={options}
-      ></GoogleMap>
+      <NavBar />
+      <HeaderWrapper>
+        <HeadlineUnderline>
+          <h1>Helping Hands around you</h1>
+        </HeadlineUnderline>
+      </HeaderWrapper>
+      <LocationMap places={places} />
+      <LocationListWrapper>
+        <LocationList places={places} />
+      </LocationListWrapper>
+      <FinePrint>
+        Hinweis: Helping Hands beschränkt sich bei der Anzeige möglicher Helfer,
+        nur auf psychologische Psychotherapeuten in unmittelbarer Nähe.
+      </FinePrint>
     </div>
   );
 }
 
-export default geolocated({
-  positionOptions: {
-    enableHighAccuracy: false,
-    watchPosition: true,
-  },
-  userDecisionTimeout: 5000,
-})(FindHelpPage);
+const HeaderWrapper = styled.header`
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+
+  h1 {
+    font-size: 28px;
+    margin-top: 25px;
+  }
+`;
+
+const LocationListWrapper = styled.section`
+  margin-top: 20px;
+`;

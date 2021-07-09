@@ -5,12 +5,16 @@ import React from "react";
 import styled from "styled-components/macro";
 import FloatingActionButtons from "../common/FloatingActionButtons";
 import NavBar from "../components/NavBar";
+import Start from "../img/Start.svg";
 
 export default function ManualPage() {
   return (
     <Page>
       <NavBar />
       <Wrapper>
+        <ManualImage>
+          <img src={Start} alt={Start} className={"center"} />
+        </ManualImage>
         <HeaderManual />
         <CardContainer>
           <div>
@@ -67,8 +71,13 @@ const CardContainer = styled.section`
   background: white;
   border-radius: 6px;
   padding: 15px;
+  overflow: scroll;
   -webkit-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
+
+  div {
+    text-align: justify;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -97,4 +106,19 @@ const ButtonFixedWrapper = styled.section`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+
+const ManualImage = styled.section`
+  padding: 5px;
+
+  img {
+    max-width: 60%;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
 `;

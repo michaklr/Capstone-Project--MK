@@ -18,11 +18,11 @@ export default function UmfrageleisteText({ checkedAnswer, setCheckedAnswer }) {
               checked={checkedAnswer === "Trifft nicht zu"}
             />
             <label>
-              <p>
+              <>
                 <div>Trifft</div>
                 <div>nicht</div>
                 <div>zu</div>
-              </p>
+              </>
             </label>
           </li>
           <li>
@@ -34,11 +34,11 @@ export default function UmfrageleisteText({ checkedAnswer, setCheckedAnswer }) {
               checked={checkedAnswer === "Trifft kaum zu"}
             />
             <label>
-              <p>
+              <>
                 <div>Trifft</div>
                 <div>kaum</div>
                 <div>zu</div>
-              </p>
+              </>
             </label>
           </li>
           <li>
@@ -50,11 +50,11 @@ export default function UmfrageleisteText({ checkedAnswer, setCheckedAnswer }) {
               checked={checkedAnswer === "Trifft ziemlich zu"}
             />
             <label>
-              <p>
+              <>
                 <div>Trifft</div>
                 <div>ziemlich</div>
                 <div>zu</div>
-              </p>
+              </>
             </label>
           </li>
           <li>
@@ -66,11 +66,11 @@ export default function UmfrageleisteText({ checkedAnswer, setCheckedAnswer }) {
               checked={checkedAnswer === "Trifft deutlich zu"}
             />
             <label>
-              <p>
+              <>
                 <div>Trifft</div>
                 <div>deutlich</div>
                 <div>zu</div>
-              </p>
+              </>
             </label>
           </li>
           <li>
@@ -82,11 +82,11 @@ export default function UmfrageleisteText({ checkedAnswer, setCheckedAnswer }) {
               checked={checkedAnswer === "Trifft extrem zu"}
             />
             <label>
-              <p>
+              <>
                 <div>Trifft</div>
                 <div>extrem</div>
                 <div>zu</div>
-              </p>
+              </>
             </label>
           </li>
         </ul>

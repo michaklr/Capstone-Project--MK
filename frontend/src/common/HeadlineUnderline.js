@@ -12,19 +12,19 @@ export default function HeadlineUnderline({ children }) {
 }
 const ChildContainer = styled.div`
   position: relative;
-  z-index: 1;
 `;
 
 const HeadlineContainer = styled.section`
   margin: -15px 0;
+  margin-top: 10px;
   position: relative;
   pointer-events: none;
   text-align: center;
 `;
 
 const UnderlineStyled = styled(Underline)`
-  width: 100%;
-  z-index: 0;
+  width: 80%;
+  z-index: -1;
   position: relative;
   top: -34px;
   opacity: 0.6;
