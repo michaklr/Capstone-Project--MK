@@ -34,7 +34,8 @@ const HeaderContainer = styled.header`
   height: 60px;
   width: 100%;
   padding: 10px 15px;
-  box-shadow: var(--primary-shadow);
+  -webkit-box-shadow: 2px 7px 21px 0px rgba(196, 196, 196, 0.57);
+  box-shadow: 2px 7px 21px 0px rgba(196, 196, 196, 0.57);
   button:nth-child(3) {
     justify-self: end;
   }

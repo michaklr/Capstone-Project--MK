@@ -8,9 +8,8 @@ export default createGlobalStyle`
   html, body {
     padding: 0.5px;
     padding-bottom: 60px;
-    font-size: 110%;
+    font-size: 100%;
     font-family: sans-serif;
-
   }
   
   button, input, select, textarea {

@@ -12,7 +12,6 @@ import java.util.List;
 @RequestMapping("/api/survey")
 public class SurveyItemController {
 
-
     private final SurveyItemService service;
 
     @Autowired
