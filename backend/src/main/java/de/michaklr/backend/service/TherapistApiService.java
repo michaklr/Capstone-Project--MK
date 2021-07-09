@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class TherapistApiService {
 
-    @Value("${google.api.key}")
+    @Value("${google.api.key:}")
     private String googleApiKey;
 
     private RestTemplate restTemplate = new RestTemplate();
