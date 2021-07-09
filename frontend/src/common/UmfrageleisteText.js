@@ -1,12 +1,8 @@
 import "./Umfrageleiste.css";
 
-export default function UmfrageleisteText({
-  addAnswer,
-  setEnableWeiterButton,
-}) {
+export default function UmfrageleisteText({ checkedAnswer, setCheckedAnswer }) {
   const handleOnChange = (event) => {
-    addAnswer(event.target.value);
-    setEnableWeiterButton(true);
+    setCheckedAnswer(event.target.value);
   };
 
   return (
@@ -19,6 +15,7 @@ export default function UmfrageleisteText({
               type="radio"
               name="likert"
               value="Trifft nicht zu"
+              checked={checkedAnswer === "Trifft nicht zu"}
             />
             <label>
               <p>
@@ -34,6 +31,7 @@ export default function UmfrageleisteText({
               type="radio"
               name="likert"
               value="Trifft kaum zu"
+              checked={checkedAnswer === "Trifft kaum zu"}
             />
             <label>
               <p>
@@ -49,6 +47,7 @@ export default function UmfrageleisteText({
               type="radio"
               name="likert"
               value="Trifft ziemlich zu"
+              checked={checkedAnswer === "Trifft ziemlich zu"}
             />
             <label>
               <p>
@@ -64,6 +63,7 @@ export default function UmfrageleisteText({
               type="radio"
               name="likert"
               value="Trifft deutlich zu"
+              checked={checkedAnswer === "Trifft deutlich zu"}
             />
             <label>
               <p>
@@ -79,6 +79,7 @@ export default function UmfrageleisteText({
               type="radio"
               name="likert"
               value="Trifft extrem zu"
+              checked={checkedAnswer === "Trifft extrem zu"}
             />
             <label>
               <p>

@@ -12,7 +12,7 @@ public class ResultAnswers {
     String angstResult;
     String zwangResult;
     String somaResult;
-    String essStörungResult;
+    String essVerhaltenResult;
     String zusatzResult;
     String gesamtResult;
 

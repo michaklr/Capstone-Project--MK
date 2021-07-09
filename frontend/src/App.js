@@ -6,6 +6,7 @@ import SurveyPage from "./pages/SurveyPage";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import useSurveyQuestions from "./hooks/UseSurveyQuestions";
 import useSurveyResults from "./hooks/UseSurveyResults";
+import FindHelpPage from "./pages/FindHelpPage";
 
 const theme = createMuiTheme({
   palette: {
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path={"/manual/survey/result"} exact>
             <ResultPage surveyAnswers={surveyAnswers} />
+          </Route>
+          <Route path={"/manual/survey/result/help"} exact>
+            <FindHelpPage />
           </Route>
         </Switch>
       </Router>

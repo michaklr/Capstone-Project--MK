@@ -13,6 +13,7 @@ public class SurveyAnswerService {
         int angstLevel= 0;
         int zwangLevel = 0;
         int somaLevel= 0;
+        int essVerhaltenLevel = 0;
 
 
         ResultAnswers results = new ResultAnswers();
@@ -89,11 +90,11 @@ public class SurveyAnswerService {
         if (depressionsScore <= 0.75){
            results.setDepressionResult("Es liegt ein Verdacht vor");
         } else if (depressionsScore > 0.75 && depressionsScore <= 1){
-            results.setDepressionResult("Es liegt eine geringe Symptombelastung vor.");
+            results.setDepressionResult("Es liegen nur geringe Symptome vor.");
         } else if (depressionsScore > 1 && depressionsScore <= 2){
-            results.setDepressionResult( "Es liegt eine mittlere Symptombelastung vor.");
+            results.setDepressionResult( "Es liegen verstärkte Symptome vor.");
         }else if (depressionsScore > 2 && depressionsScore <= 3){
-            results.setDepressionResult( "Depression: Es liegt eine schwere Symptombelastung vor.");
+            results.setDepressionResult( "Depression: Es liegen schwere Symptome vor.");
         }
 
 
@@ -168,11 +169,11 @@ public class SurveyAnswerService {
         if (angstScore <= 0.75){
             results.setAngstResult("Es liegt ein Verdacht vor.");
         } else if (angstScore > 0.75 && angstScore <= 1){
-            results.setAngstResult( "Es liegt eine geringe Symptombelastung vor.");
+            results.setAngstResult( "Es liegt nur geringe Symptome vor.");
         } else if (angstScore > 1 && angstScore <= 2){
-            results.setAngstResult( "Es liegt eine mittlere Symptombelastung vor.");
+            results.setAngstResult( "Es liegen verstärkte Symptome vor.");
         }else if (angstScore > 2 && angstScore <= 3){
-            results.setAngstResult( "Es liegt eine schwere Symptombelastung vor.");
+            results.setAngstResult( "Es liegen schwere Symptome vor.");
         }
 
 
@@ -232,11 +233,11 @@ public class SurveyAnswerService {
         if (zwangScore <= 0.67){
             results.setZwangResult("Es liegt ein Verdacht vor.");
         } else if (zwangScore > 0.67 && zwangScore <= 1.0){
-            results.setZwangResult( "Es liegt eine geringe Symptombelastung vor.");
+            results.setZwangResult( "Es liegen nur geringe Symptome vor.");
         } else if (zwangScore > 1.0 && zwangScore <= 2.0){
-            results.setZwangResult( "Es liegt eine mittlere Symptombelastung vor.");
+            results.setZwangResult( "Es liegen verstärkte Symptome vor.");
         }else if (zwangScore > 2.0 && zwangScore <= 3.0){
-            results.setZwangResult( "Es liegt eine schwere Symptombelastung vor.");
+            results.setZwangResult( "Es liegen schwere Symptome vor.");
         }
 
 
@@ -298,78 +299,79 @@ public class SurveyAnswerService {
         if (somaScore <= 0.33){
             results.setSomaResult("Es liegt ein Verdacht vor.");
         } else if (somaScore > 0.33 && somaScore <= 0.75){
-            results.setSomaResult( "Es liegt eine geringe Symptombelastung vor.");
+            results.setSomaResult( "Es liegen nur geringe Symptome vor.");
         } else if (somaScore > 0.75 && somaScore <= 1.25){
-            results.setSomaResult( "Es liegt eine mittlere Symptombelastung vor.");
+            results.setSomaResult( "Es liegen verstärkte Symptome vor.");
         }else if (somaScore > 1.25 && somaScore <= 2.67){
-           results.setSomaResult( "Somatisierung: Es liegt eine schwere Symptombelastung vor.");
+           results.setSomaResult( "Es liegen schwere Symptome vor.");
         }
 
 
 
 
-        int essStörungLevel = 0;
+
 
         if (answersDto.getAnswer_14().equals("Trifft nicht zu")) {
-            essStörungLevel += 0;
+
+            essVerhaltenLevel += 0;
         }
         if (answersDto.getAnswer_14().equals("Trifft kaum zu")) {
-            essStörungLevel += 1;
+            essVerhaltenLevel += 1;
         }
         if (answersDto.getAnswer_14().equals("Trifft ziemlich zu")) {
-            essStörungLevel += 2;
+            essVerhaltenLevel += 2;
         }
         if (answersDto.getAnswer_14().equals("Trifft deutlich zu")) {
-            essStörungLevel += 3;
+            essVerhaltenLevel += 3;
         }
         if (answersDto.getAnswer_14().equals("Trifft extrem zu")) {
-            essStörungLevel += 4;
+            essVerhaltenLevel += 4;
         }
 
 
         if (answersDto.getAnswer_15().equals("Trifft nicht zu")) {
-            essStörungLevel += 0;
+            essVerhaltenLevel += 0;
         }
         if (answersDto.getAnswer_15().equals("Trifft kaum zu")) {
-            essStörungLevel += 1;
+            essVerhaltenLevel += 1;
         }
         if (answersDto.getAnswer_15().equals("Trifft ziemlich zu")) {
-            essStörungLevel += 2;
+            essVerhaltenLevel += 2;
         }
         if (answersDto.getAnswer_15().equals("Trifft deutlich zu")) {
-            essStörungLevel += 3;
+            essVerhaltenLevel += 3;
         }
         if (answersDto.getAnswer_15().equals("Trifft extrem zu")) {
-            essStörungLevel += 4;
+            essVerhaltenLevel += 4;
         }
 
 
         if (answersDto.getAnswer_16().equals("Trifft nicht zu")) {
-            essStörungLevel += 0;
+            essVerhaltenLevel += 0;
         }
         if (answersDto.getAnswer_16().equals("Trifft kaum zu")) {
-            essStörungLevel += 1;
+            essVerhaltenLevel += 1;
         }
         if (answersDto.getAnswer_16().equals("Trifft ziemlich zu")) {
-            essStörungLevel += 2;
+            essVerhaltenLevel += 2;
         }
         if (answersDto.getAnswer_16().equals("Trifft deutlich zu")) {
-            essStörungLevel += 3;
+            essVerhaltenLevel += 3;
         }
         if (answersDto.getAnswer_16().equals("Trifft extrem zu")) {
-            essStörungLevel += 4;
+            essVerhaltenLevel += 4;
         }
 
-        int essStörungScore = essStörungLevel/4;
+        int essStörungScore = essVerhaltenLevel/4;
 
         if (essStörungScore <= 0.33){
-            results.setEssStörungResult("Es liegt ein Verdacht vor.");
+            results.setEssVerhaltenResult("Es liegt ein Verdacht vor.");
         } else if (essStörungScore > 0.33 && essStörungScore <= 0.67){
-            results.setEssStörungResult( "Es liegt eine geringe Symptombelastung vor.");
+            results.setEssVerhaltenResult( "Es liegen nur geringe Symptome vor.");
         } else if (essStörungScore > 0.67 && essStörungScore <= 1.5){
-            results.setEssStörungResult( "Es liegt eine mittlere Symptombelastung vor.");
+            results.setEssVerhaltenResult( "Es liegen verstärkte Symptome vor.");
         }else if (essStörungScore > 1.5 && essStörungScore <= 2.75){
-            results.setEssStörungResult( "Es liegt eine schwere Symptombelastung vor.");
+            results.setEssVerhaltenResult( "Es liegen schwere Symptome vor.");
         }
 
 
@@ -650,11 +652,11 @@ public class SurveyAnswerService {
         if (gesamtScore <= 0.5){
             results.setGesamtResult("Es liegt ein Verdacht vor.");
         } else if (essStörungScore > 0.5 && essStörungScore <= 0.6){
-            results.setGesamtResult( "Es liegt eine geringe Symptombelastung vor.");
+            results.setGesamtResult( "Es liegen nur geringe Symptome vor.");
         } else if (essStörungScore > 0.6 && essStörungScore <= 0.9){
-            results.setGesamtResult( "Es liegt eine mittlere Symptombelastung vor.");
+            results.setGesamtResult( "Es liegen verstärkte Symptome vor.");
         }else if (essStörungScore > 0.9 && essStörungScore <= 1.7){
-            results.setGesamtResult( "Es liegt eine schwere Symptombelastung vor.");
+            results.setGesamtResult( "Es liegen schwere Symptome vor.");
         }
 
         return results;
