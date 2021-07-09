@@ -2,23 +2,26 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function useSurveyResults() {
-  const [Answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState({});
+
+  const [surveyAnswers, setSurveyAnswers] = useState();
+  console.log(answers);
 
   const addAnswer = (answer, answerQuestionNumber) => {
-    setAnswers({ ...Answers, [answerQuestionNumber]: answer });
-    console.log(Answers);
+    setAnswers({ ...answers, ["answer_" + [answerQuestionNumber]]: answer });
   };
 
   const submitAnswers = () => {
     axios
-      .post("/api/survey", Answers)
+      .post("/api/survey", answers)
       .then((response) => response.data)
-      .then(console.log)
+      .then(setSurveyAnswers)
       .catch((error) => console.error());
   };
 
   return {
     addAnswer,
     submitAnswers,
+    surveyAnswers,
   };
 }

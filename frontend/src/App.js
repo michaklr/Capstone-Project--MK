@@ -17,7 +17,7 @@ const theme = createMuiTheme({
 
 function App() {
   const { surveyQuestions } = useSurveyQuestions();
-  const { addAnswer, submitAnswers } = useSurveyResults();
+  const { addAnswer, submitAnswers, surveyAnswers } = useSurveyResults();
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,7 +37,7 @@ function App() {
             />
           </Route>
           <Route path={"/manual/survey/result"} exact>
-            <ResultPage />
+            <ResultPage surveyAnswers={surveyAnswers} />
           </Route>
         </Switch>
       </Router>
