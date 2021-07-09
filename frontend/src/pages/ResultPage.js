@@ -18,24 +18,75 @@ export default function ResultPage({ surveyAnswers }) {
       </HeaderWrapper>
       <Wrapper>
         <CardContainer>
-          {surveyAnswers?.depressionResult}
-          {surveyAnswers?.angstResult}
-          {surveyAnswers?.zwangResult}
-          {surveyAnswers?.somaResult}
-          {surveyAnswers?.essVerhaltenResult}
-          {surveyAnswers?.zusatzResult}
-          {surveyAnswers?.gesamtResult}
-
           <div>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Schön, dass Sie sich die Zeit genommen haben, alle Fragen zu
+            beantworten. Da der Fragenkatalog ein möglichst weites Spektrum
+            psychischer Symptomatiken abdecken soll, erfolgt die Auswertung
+            einer möglichen Symptombelastung nach spezifischen psychischen
+            Krankheits- bildern. Eine Symptombelastung bedeutet, dass mögliche
+            seelische Belastungen oder ein Leidensdruck vorliegen.
+            <p>Demnach ergab die Auswertung ihres Fragebogens folgendes:</p>
+          </div>
+          <ul>
+            <p>
+              <li>{surveyAnswers?.depressionResult}</li>
+            </p>
+            <p>
+              <li>{surveyAnswers?.angstResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.zwangResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.somaResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.essVerhaltenResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.konzentrationResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.suizidResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.schlafResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.appetitResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.merkResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.traumaResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.schicksalResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.bodyResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.umgebungResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.verlangenResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.verletzungResult}</li>
+            </p>
+            <p>
+              <li> {surveyAnswers?.vorliebeResult}</li>
+            </p>
+          </ul>
+          <div>
+            Unabhängig von der erfassten Symptombelastung, hat Sie etwas dazu
+            bewegt, diese Fragen zu beantworten. Wenn Sie das Bedürfnis haben,
+            über Schwierigkeiten mit einer psychologischen Psychotherapeutin zu
+            sprechen, dann möchten wir Sie dazu unbedingt ermutigen. Wir
+            glauben, dass ein Gespräch mit einem/ einer Psychotherapeut*in immer
+            hilfreich sein kann.
           </div>
         </CardContainer>
       </Wrapper>
@@ -62,6 +113,14 @@ const CardContainer = styled.section`
   padding: 15px;
   -webkit-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.1);
+
+  div {
+    text-align: justify;
+  }
+
+  p {
+    text-align: justify;
+  }
 `;
 
 const Wrapper = styled.section`

@@ -13,7 +13,18 @@ public class ResultAnswers {
     String zwangResult;
     String somaResult;
     String essVerhaltenResult;
-    String zusatzResult;
-    String gesamtResult;
+    String konzentrationResult;
+    String suizidResult;
+    String schlafResult;
+    String appetitResult;
+    String merkResult;
+    String traumaResult;
+    String schicksalResult;
+    String bodyResult;
+    String umgebungResult;
+    String verlangenResult;
+    String verletzungResult;
+    String vorliebeResult;
+
 
 }
