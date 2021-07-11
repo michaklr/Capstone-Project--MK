@@ -1,6 +1,5 @@
 package de.michaklr.backend;
 
-import de.michaklr.backend.service.TherapistApiService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

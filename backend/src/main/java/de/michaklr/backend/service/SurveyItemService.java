@@ -17,7 +17,7 @@ public class SurveyItemService {
         this.surveyItemRepository = surveyItemRepository;
     }
 
-    public List<SurveyItem> listItems(){
+    public List<SurveyItem> listItems() {
         return surveyItemRepository.findAll();
     }
 

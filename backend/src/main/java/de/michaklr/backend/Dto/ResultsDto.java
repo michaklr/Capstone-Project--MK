@@ -14,8 +14,7 @@ import java.util.List;
 @Builder
 public class ResultsDto {
 
-   private List<Therapist> results;
-
+    private List<Therapist> results;
 
 
 }
