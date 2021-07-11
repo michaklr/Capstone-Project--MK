@@ -1,5 +1,5 @@
 # Helping Hands
-___
+
 
 ### `About the app`
 
