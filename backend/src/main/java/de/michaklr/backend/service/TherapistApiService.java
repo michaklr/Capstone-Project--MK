@@ -1,4 +1,5 @@
 package de.michaklr.backend.service;
+
 import de.michaklr.backend.Dto.ResultsDto;
 import de.michaklr.backend.model.Therapist;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
+
 import java.util.List;
 
 @Service
